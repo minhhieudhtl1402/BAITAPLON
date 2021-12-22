@@ -1,0 +1,46 @@
+@media (max-width: 46.1875em){
+    .nav-mb{
+        background-color: rgba(0, 0, 0,0.9);
+        margin-top: -8px;
+        margin-left: -24px;
+        width: 50px;
+        
+
+    }
+    .nav-item-mb{
+        display: block;
+        padding: 8px 16px;
+    }
+    .icon-search{
+        color:#fff;
+        margin-top: -8px;
+    }
+    .search{
+        padding: 16px;
+    }
+    .search input{
+        display: none;
+    }
+    .nav-item-mb:hover{
+        background-color: rgb(117, 113, 113);
+
+        color:#000;
+    }
+    .icon-mb{
+        display: none;
+    }
+    .event-mb{
+        display: none;
+    }
+
+}
+
+@media (max-width: 63.9375em) and (min-width: 46.25em) {
+    .event-tablet{
+        margin-left: 12px ;
+        margin-right: 12px;
+    }
+}
+    
+
+@media (min-width:64em) {}
