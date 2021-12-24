@@ -1,8 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    height: 100px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    
 }
 
 nav{
@@ -10,33 +10,42 @@ nav{
     top: 0;
     left: 0;
     width: 100%;
-    height: 94px;
+    height: 64px;
     background: black;
     padding: 0 100px ;
     box-sizing: border-box;
-    
+    z-index: 1;
 }
 nav.brand{
     float: left;
     height: 40px;
     line-height: 40px;
+    display: flex;
 }
 .img-logo {
-    width: 33px;
-    height: 25px;
+    width: 30px;
+    height: 15px;
     margin-top: 27px;
     
 }
 nav .brand h2{
     color: #fff;
-    font-size:45px;
-    margin-top: -38px;
+    font-size:35px;
     font-weight: 700;
-    margin-left: 42px;
+    margin-top: -30px;
+   
+}
+.img-sign{
+    display: flex;
+    
+    flex-direction: column;
+
 }
 .imgbtn{
-    height: 1130px;
+    height: 100%;
     width: 100%;
+    position: relative;
+    
 }
 
 .nav{
@@ -45,35 +54,45 @@ nav .brand h2{
     padding-left: 173px;
 }
 .main {
+    margin: 30px;
     background: #f1f1f1;
-    min-height: 100vh;
+    min-height: 40px;
     display: flex;
     justify-content: center;
-    margin-top: -1100px;
+    position: absolute;
+    top:0;
+   
+   
+    
     
     
 }
 .form {
- font-family: sans-serif;
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+ 
     width: 478px;
-    min-height: 50px;
-    padding: 50px 30px;
+    height: auto;
+    padding: 25px;
     text-align: center;
     background: #fff;
     border-radius: 10px;
     align-self: center;
     box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
-    font-size: 50px;
-    margin-top: -102px
+    font-size: 15px;
+    margin-top: 70px;
+    
 }
 .form .heading {
-    font-size: 2;
-    margin: -53px;
+    font-size: 30px;
+    font-weight: 700;
+    
 }
 .form .desc {
     text-align: center;
     color: #636d77;
-    font-size: 1.6rem;
+    
     font-weight: lighter;
     line-height: 2.4rem;
     margin-top: 16px;
@@ -81,32 +100,33 @@ nav .brand h2{
 }
 .form-group {
 display: flex;
-margin-bottom: 35px;
+margin-bottom: 30px;
 flex-direction: column;
 }
 .img-logoform{
     width: 33px;
     height: 17px;
-    margin-top: -101px;
+    margin-left: 50%;
+   
 }
 .form-control {
-    height: 66px;
+    height: 55px;
     padding: 15px 12px;
     border: 1px solid #b3b3b3;
     border-radius: 3px;
     outline: none;
-    font-size: 2rem;
+    font-size: 20px;
  }
  .form-submit {
     outline: none;
-   background-color: blue;
+  
    margin-top: 12px;
    padding: 12px 16px;
-   font-weight: 600;
+   font-weight: 700;
    color: #fff;
    border: none;
    width: 100%;
-   font-size: 14px;
+   font-size: 20px;
    border-radius: 8px;
    cursor: pointer;
 }
@@ -124,11 +144,32 @@ flex-direction: column;
     text-align: center;
 }
 .checkbox{
-    font-size: 27px;
-    margin-right: 100px;
-    margin-top: -30px;
+    font-size: 20px;
+   
 }
 label{
-    margin-left: -89px;
-    margin-top: 33px;
+   
+    
+}
+.footer{
+    margin-top:-50px;
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    margin-left: 15%;
+   
+    
+    
+}
+.lag{
+   
+    position:absolute;
+
+}
+.ft{
+    position:absolute;
+    margin-left: 220px;
+    margin-top: 8px;
+
+
 }
