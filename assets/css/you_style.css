@@ -7,18 +7,20 @@ body{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     margin: 0px;
     height: 100vh;
+    position: relative;
+    
 }
 
 header{
-    display: flex;
+    top:0px;
+   display: flex;
     justify-content: space-around;
     background:rgba(0,0,0,0.4);
     height: 64px;
     padding: 0px 8px;
     width: 100%;
     position: fixed;
-    z-index: 1;
-    top:0;
+    z-index: 2;
 
 }
 .header-row
@@ -27,6 +29,10 @@ header{
     width: 100%;
     
 }
+/* .navbar
+{
+    font-family:  Nova,helvetica neue,helvetica,arial,sans-serif;
+} */
 
 .navbar-dark .navbar-nav .nav-link
 {
@@ -56,7 +62,6 @@ header{
     width: 30px;
     height: 15px;
 }
-
 .search{
     margin-top: 4px;
     padding: 0px 10px;
@@ -111,7 +116,6 @@ span.material-icons:hover{
     width: 60px;
     height: 40px;
     text-align: center;
-  
 }
 .img-user{
    width: 30px;
@@ -121,11 +125,75 @@ span.material-icons:hover{
   
    margin-left: 16px;
    margin-top: 2px;
-
 }
 .img-user:hover{
    background-image:#817e7e;
 }
-.test{
-    margin-top: 70px;
+body .tabUI { 
+    position: relative;
+    padding: 0px;
+    padding-left: 20px;   
+  }
+  .nav-tabs .nav-link.active {
+    color: #000;
+  }
+  .nav-link{
+    color: #717477;
+  }
+ 
+  
+#cover{
+    margin-top: 64px;
+    height: 250px;
+    background-color: aqua;
+   background-image: url("https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-bia-dep-chat-anime.jpg");
+   position: relative;
 }
+#user-cover{
+    height: 151px;
+}
+#cover-info{
+    position: absolute;
+    bottom: 15px;
+}
+  .tab-Content {
+    padding: 28px 0;
+  
+  }
+  .tab-pane {
+    color: #333;
+    display: none;
+  }
+  .tab-pane.active {
+    display: block;
+  }
+
+  #mytab{
+
+  }
+  #caculator{
+      height: 101px;
+  }
+
+  #showcase-add{
+      margin-left: 100px;
+  }
+  #showcase-image{
+      height: 340px;
+
+      background-image: url("https://supperclean.vn/wp-content/uploads/2021/01/386f47c88a7aaa497ec6edc1c02cc9b6-scaled.jpg");
+  }
+  
+  #showcase-pencil{
+      margin-left: 63px;
+  }
+ #popular-photo{
+     height: 200px;
+    background-image: url("https://supperclean.vn/wp-content/uploads/2021/01/386f47c88a7aaa497ec6edc1c02cc9b6-scaled.jpg");
+ }
+ #btn-received{
+     margin-left: 80px;
+ }
+ #Testimonials{
+     height: 64px;
+ }
