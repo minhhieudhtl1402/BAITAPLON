@@ -175,25 +175,32 @@ body .tabUI {
       height: 101px;
   }
 
-  #showcase-add{
-      margin-left: 100px;
-  }
+
   #showcase-image{
       height: 340px;
 
       background-image: url("https://supperclean.vn/wp-content/uploads/2021/01/386f47c88a7aaa497ec6edc1c02cc9b6-scaled.jpg");
   }
   
-  #showcase-pencil{
-      margin-left: 63px;
-  }
+  
  #popular-photo{
      height: 200px;
     background-image: url("https://supperclean.vn/wp-content/uploads/2021/01/386f47c88a7aaa497ec6edc1c02cc9b6-scaled.jpg");
  }
- #btn-received{
-     margin-left: 80px;
- }
  #Testimonials{
      height: 64px;
+ }
+ #luu-anh img{
+     width: 50%;  
+ }
+ #album-photo img,#faves-photo img
+ {
+    width: 20%;
+ }
+ #galleries-photo div{
+     width: 30%;
+    
+ }
+ #Stats-photo{
+     width: 30%;
  }

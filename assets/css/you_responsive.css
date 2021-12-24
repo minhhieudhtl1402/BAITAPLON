@@ -1,0 +1,21 @@
+@media (max-width: 46.1875em)
+{
+    #aa{
+        margin-left: 130px;
+        /* align-items: flex-end; */
+    }
+    #showcase-add{
+        visibility: hidden;
+    }
+
+
+}
+
+@media (max-width: 63.9375em) and (min-width: 46.25em) {
+/* tablet */
+}
+    
+
+@media (min-width:64em) {
+
+}
