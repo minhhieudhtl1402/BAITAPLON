@@ -32,6 +32,13 @@
     .event-mb{
         display: none;
     }
+    .img-view{
+        font-size: 12px;
+
+    }
+    .view{
+        font-size:10px;
+    }
 
 }
 
