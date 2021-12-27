@@ -1,0 +1,125 @@
+@media (max-width: 46.1875em){
+    .nav{
+        position: fixed;
+        width: 93%;
+        height: 46px;
+        background: black;
+        z-index: 1;
+    }
+    .img-logo{   
+    width: 21px;
+    height: 12px;
+    margin-top: 22px;
+    margin-left: 16px;
+    }
+    nav .brand h2{
+        color: #fff;
+        font-size:24px;
+        font-weight: 700;
+        margin-top: -20px;
+    }
+    .img-sign{
+        height: 682px;
+       
+    }
+    .imgbtn{
+        display: none;
+    }
+    .main{
+        margin: 34px;
+        min-height: 40px;
+        display: flex;
+        position: absolute;
+        margin-top: 41px;
+    }
+    .form {
+        display: flex;
+        width: 200px;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+        background: #fff;
+        border-radius: 10px;
+        align-self: center;
+        box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+        font-size: 3px;
+        margin-left: 80px;
+        margin-top: 58px;
+        
+    }
+    .form .heading {
+        font-size: 15px;
+        font-weight: 700;
+        
+    }
+    .form .desc {
+        text-align: center;
+        color: #636d77;
+        
+        font-weight: lighter;
+        line-height: 2.4rem;
+        margin-top: 8px;
+        font-weight: 300;
+    }
+    .form-group {
+    display: flex;
+    margin-bottom: 8px;
+    flex-direction: column;
+    }
+    .img-logoform{
+        width: 17px;
+        height: 10px;
+        margin-left: 73px;
+      
+       
+    }
+    .form-control {
+        height: 30px;
+        padding: 8px 8px;
+        
+        font-size: 12px;
+     }
+     .signBtn{
+         font-size: 8px;
+     }
+     .form-submit {
+        outline: none;
+      
+       margin-top: 8px;
+       padding: 8px 12px;
+       font-weight: 700;
+       color: #fff;
+       border: none;
+       width: 100%;
+       font-size: 15px;
+       border-radius: 8px;
+       cursor: pointer;
+    }
+         
+    .form-submit:hover {
+       background-color: blue;
+    }
+    .loginhere{
+        text-align: center;
+        font-size: 12px;
+    }
+    .data{
+        display: none;
+        color: #898989;
+        font-size:12px;
+        text-align: center;
+    }
+    .checkbox{
+        font-size: 15px;
+       
+    }
+    .footer{
+        margin-top: -286px;
+    font-size: 10px;
+    display: flex;
+    text-align: center;
+    margin-left: 19%;
+
+    }
+}
+  

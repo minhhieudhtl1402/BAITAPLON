@@ -20,7 +20,7 @@ nav.brand{
     float: left;
     height: 40px;
     line-height: 40px;
-    display: flex;
+    
 }
 .img-logo {
     width: 30px;
@@ -42,7 +42,7 @@ nav .brand h2{
 
 }
 .imgbtn{
-    height: 100%;
+    height: auto;
     width: 100%;
     position: relative;
     
@@ -147,29 +147,19 @@ flex-direction: column;
     font-size: 20px;
    
 }
-label{
-   
-    
-}
 .footer{
     margin-top:-50px;
     font-size: 20px;
     display: flex;
     text-align: center;
     margin-left: 15%;
-   
-    
-    
 }
 .lag{
    
     position:absolute;
-
 }
 .ft{
     position:absolute;
     margin-left: 220px;
     margin-top: 8px;
-
-
 }
