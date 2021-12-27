@@ -1,114 +1,155 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     height: 100%;
 }
+
+
 header{
+    top:0px;
+   display: flex;
+    justify-content: space-around;
+    background:rgba(0,0,0,0.4);
+    height: 64px;
+    padding: 0px 8px;
     width: 100%;
-    height: 100%;
-    padding: 100px 40px 20px 50px;
-}
-
-nav{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 94px;
-    background: rgba(0,0,0,0.4);
-    padding: 0 100px ;
-    box-sizing: border-box;
-    
-}
+    z-index: 2;
 
-nav .brand{
-    float: left;
-    height: 40px;
-    line-height: 40px;
 }
-.img-logo {
-    width: 33px;
-    height: 25px;
-    margin-top: 27px;
+.header-row
+{
+    background-color:rgba(0,0,0,0.4);
+    width: 100%;
     
 }
-nav .brand h2{
-    color: #fff;
-    font-size:35px;
-    margin-top: -38px;
-    font-weight: 700;
-    margin-left: 42px;
-    
-}
-nav ul{
-    float: right;
+ ul{
+    margin-top: 40px;
     display: flex;
-    margin:0;
-    padding: 0;
+    margin-left: 200px;
 }
-nav ul h3{
+.btn-login{
     list-style: none;
     width: 64px;
     height: 74px;
     color: white;
     font-size: 20px;
-    margin-top: -44px;
+    margin-top: 20px;
     margin-left: 74px;
     
 }
-nav ul button{
-    color: white;
+.btn-signup{
+    background-color: #fff;
+    color: black;
     justify-content: space-around;
     height: 45px;
-    width: 127px;
-    margin-top: -54px;
+    width: 90px;
+    margin-top: 15px;
     margin-left: 50px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 10px;
 }
-nav ul button h3{
-    color: black;
-    width: 97px;
-    height: 64px;
-    margin-left: 4px;
-    margin-top: 6px;
-    font-size: 20px;
+
+/* .navbar
+{
+    font-family:  Nova,helvetica neue,helvetica,arial,sans-serif;
+} */
+
+.navbar-dark .navbar-nav .nav-link
+{
+    color:#fff;
+    padding: 0px;
 }
-.search nav{
-    border-radius: 10px;
+.dropdown:hover .dropdown-menu
+{
+    display:block;
+    margin-top:0;
 }
-.input-search
-{ 
+.logo{
+    display: flex;
+
+}
+.logo:hover{
+    color: #817e7e;
+}
+.logo >h2{
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 8px;
     
-    padding: 5px 20px;
-    width: 300px;
+}
+.img-logo{
+    margin-top: 16px;
+    width: 30px;
+    height: 15px;
+}
+.search{
+    margin-top: 4px;
+    padding: 0px 10px;
+    margin-left: 200px;
+    
+    
+
+}
+ .icon-search{
+    position: absolute;
+    /* top: 50%; */
+    margin-top: 6px;
+    z-index: 1;
+    color: #212124;
+    
+}
+.search input{
+  width: 400px;
+  height: 40px;
+  background-color: #bdbdbd;
+
+ 
+  color:#212124;
+  border: none;
+  font-size: 13pt;
+  float: left;
+  margin-top: -2px;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .carousel-caption 
 {
     position: absolute;
     color:#fff;
     z-index: 1;
-    top:300px;
-    margin: 0px 356px;
+    top:100px;
+    
 
 }
 .carousel-caption h1{
-    font-size: 20px;
+    font-size: 35px;
     line-height: 56px;
     text-align: center;
-    margin-top: -93px;
-    margin-bottom: 5px;
+    
+   
     font-weight: 600;
+    display: flex;
+    position: absolute;
+    margin: 0px 270px;
 }
-.carousel-caption h3{
+.caption{
     padding: 25px;
-    margin: 52px -349px 95px -80px;
-    font-size: 20px;
-    line-height: 70px;
+    display: block;
+    font-size: 30px;
+    line-height: 50px;
     font-weight: 700;
+    margin: 50px 100px;
     text-align: center;
+    
 
+}
+.main{
+    width: 100%;
+    height: auto;
 }
 .btn-group{
     top: 0;
@@ -116,49 +157,64 @@ nav ul button h3{
     position: relative;
     margin: 0;
     width: 100%;
-    height: 100px;
+    height: 70px;
     box-sizing: border-box;
     background-color: black;
 }
 .footer{
     padding: 0 0 ;
+    z-index: 1;
+  
+   
 }
 .mausac{
-    font-size: 25px;
+    font-size: 15px;
 }
-.nav{
-    width: 80%;
-    margin-top: 10px;
-    padding-left: 173px;
-}
+
 .material-icons {
-    font-size: 20px;
-    padding: 12px;
+    font-size: 10px;
+    padding: 10px;
 }
-
-
 .icon-search{
     background-color: white;
-    font-size:20px;
-    height: 64px;
+    font-size:10px;
+    height: 44px;
+    margin-top: 10px;
+    margin-left: 80px;
 }
 .input_search{
     border: none;
-    width: 81%;
-    height: 64px;
-    font-size: 24px;
-    padding-left: 10px;
+    width: 50%;
+    height: 44px;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-top: 10px;
+   
 }
-.carousel-item{
-    height: 1030px;
-}
+
 .name-img{
     
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 32px;
+    margin-bottom: 50px;
 }
-
+.img-form{
+    
+    width: 100%;
+}
+.button-style{
+    height: 60px;
+    width: 200px;
+    margin-top: 36px;
+    text-align: center;
+  
+}
+.button-style h3{
+    font-size: 25px;
+    font-weight: 700;
+    
+}
 
 
 
