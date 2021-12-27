@@ -15,7 +15,8 @@
   <div class="container-fluid">
     <div id="background" class="container-fluid bg-image">
       <h1 class="text-center  mb-5">Quản Lí Người Dùng </h1>
-      <button type="button" class="btn btn-outline-primary">Thêm</button>
+      <a href="add_users.php" class="btn btn-outline-primary">Thêm</a>
+      
       <table class="table">
         <thead>
           <tr>
