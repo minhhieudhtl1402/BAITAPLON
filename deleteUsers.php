@@ -13,7 +13,7 @@ $ma_user=$_GET['id'];
           $number=mysqli_query($conn,$sql);
           if($number>0)
           {
-              header("location:admin.php");
+              header("location:users.php");
           }
           else{
               header(('location:error.php'));
