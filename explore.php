@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['LoginOK'])){
+        header("location:login.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +43,7 @@
                         <li class="nav-item dropdown nav-item-mb">
                             <a class="nav-link ms-3 " href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <a href="explore.html " class="text-white ms-3" style="text-decoration: none;">You</a>
+                                <a href="you.php " class="text-white ms-3" style="text-decoration: none;">You</a>
                             </a>
                             <ul class="  dropdown-menu " aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="">About</a></li>
@@ -57,7 +64,7 @@
                         <li class="nav-item dropdown nav-item-mb">
                             <a class="nav-link ms-3" href="" id="navbarDropdownnn" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <a href="explore.html " class="text-white ms-3" style="text-decoration: none;">Explores</a>
+                                <a href="explore.php " class="text-white ms-3" style="text-decoration: none;">Explores</a>
                             </a>
                             <ul class=" dropdown-menu" aria-labelledby="navbarDropdownnn">
                                 <li><a class="dropdown-item" href="explore.html">Recent Photos</a></li>
@@ -113,6 +120,7 @@
                       <div class="nav-item nav-item-mb">
                           <img src="./assets/img/avtimg.jfif" alt="" class=" img-user">
                       </div>
+                      
                     </div>
           
                 </nav>

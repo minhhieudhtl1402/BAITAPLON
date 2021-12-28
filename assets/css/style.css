@@ -98,7 +98,7 @@ span.material-icons{
     text-transform: none;
     display: inline-block;
     color: #fff;
-    margin-right: 16px;
+    cursor: pointer;
     margin-top: 2px;
 }
 span.material-icons:hover{
@@ -118,7 +118,7 @@ span.material-icons:hover{
    border-radius: 50%;
    cursor: pointer;
   
-   margin-left: 16px;
+   margin-left: 8px;
    margin-top: 2px;
 
 }
@@ -146,6 +146,7 @@ span.material-icons:hover{
     margin-top: 2px;
     cursor: pointer;
     margin-top: 80px;
+   
 }
 .main span.material-icons:hover{
     color:#128fdc;

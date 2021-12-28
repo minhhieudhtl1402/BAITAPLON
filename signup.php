@@ -25,7 +25,7 @@
     <div class="img-sign ">
         <img src="./assets/img/imgsign.jpg" alt="" class="imgbtn img-fluid">
         
-            <form action="" method="POST" class="form main " id="form-1">
+            <form action="process_signup.php" method="POST" class="form main " id="form-1">
                 <img src="./assets/img/logonav.png" alt="" class="img-logoform img-fluid mt-1">
               
                 <h6 class="heading mt-1 ">Sign in for Flickr</h6>
@@ -34,33 +34,39 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <form role="form">
-                                <div class="form-group">
-                                    <input type="Firstname" class="form-control" id="exampleInputFristname1"
-                                        placeholder="Frist name" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="Lastname" class="form-control" id="exampleInputLastname1"
-                                        placeholder="Last name" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="Yourage" class="form-control" id="exampleInputYourage1"
-                                        placeholder="Your age" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Email" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password" />
+                              
+                                    <input type="Firstname" class="form-control mb-3" id="InputFristname1"
+                                        placeholder="Frist name" name="txtName1" required autofocus />
+                                
+                               
+                                    <input type="Lastname" class="form-control mt-2 mb-3" id=InputLastname"
+                                        placeholder="Last name" name="txtName2" required />
+                             
+                                
+                                    <input type="Yourage" class="form-control mt-2 mb-3" id="InputYourage"
+                                        placeholder="Your age" name="txtAge" required />
+                               
+                              
+                                    <input type="email" class="form-control mt-2 mb-3" id="InputEmail"
+                                        placeholder="Email" name="txtEmail" required />
+                                
+                              
+                                    <input type="password" class="form-control mt-3" id="InputPassword"
+                                        placeholder="Password"  name="txtPass" required />
+                                    <?php
+                                        if(isset($_GET['error'])){
+                                            echo "<p style='color:red'> {$_GET['error']} </p>";
+                                        }
+
+                                    ?>
                                    
-                                </div>
-                                <div class="checkbox text-start">
+                               
+                                <div class="checkbox text-start mt-2">
                                     <label>
-                                        <input type="checkbox" /> I'm not a robot
+                                        <input type="checkbox" name="" required /> I'm not a robot
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-2 signBtn">
+                                <button type="submit" class="btn btn-primary mt-2 signBtn" name="btnSignup">
                                     Sign up
                                 </button>
                                 <div class="data mt-2">

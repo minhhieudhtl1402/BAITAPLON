@@ -98,6 +98,12 @@
         <div class="nav-item nav-item-mb">
             <img src="./assets/img/avtimg.jfif" alt="" class=" img-user">
         </div>
+        <div class="nav-item nav-item-mb "> 
+        <span class="material-icons ms-2">
+        logout
+        </span>
+        </div>
+    
     </div>
     </div>
 </nav>

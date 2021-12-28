@@ -29,26 +29,34 @@ header{
     display: flex;
     margin-left: 200px;
 }
-.btn-login{
+.login{
     list-style: none;
-    width: 64px;
+    min-width: 90px;
     height: 74px;
     color: white;
     font-size: 20px;
     margin-top: 20px;
-    margin-left: 74px;
+    margin-left: 24px;
+    text-decoration: none;
     
 }
+
 .btn-signup{
     background-color: #fff;
-    color: black;
+    
     justify-content: space-around;
     height: 45px;
-    width: 90px;
     margin-top: 15px;
-    margin-left: 50px;
-    font-size: 15px;
+    margin-left: 16px;
+    
     border-radius: 10px;
+    width: 120px;
+
+}
+.btn-signup a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
 
 /* .navbar
@@ -70,6 +78,7 @@ header{
     display: flex;
 
 }
+ 
 .logo:hover{
     color: #817e7e;
 }
@@ -86,29 +95,32 @@ header{
 }
 .search{
     margin-top: 4px;
-    padding: 0px 10px;
-    margin-left: 200px;
-    
+    padding: 0px 20px;
+    margin-left: 100px;
+
     
 
 }
  .icon-search{
     position: absolute;
     /* top: 50%; */
-    margin-top: 6px;
+    margin-left: 12px;
+    margin-top: 8px;
     z-index: 1;
     color: #212124;
+
+    font-size: 20px;
     
 }
 .search input{
   width: 400px;
   height: 40px;
-  background-color: #bdbdbd;
+  background-color: #e9e8e8;
 
  
   color:#212124;
   border: none;
-  font-size: 13pt;
+  font-size: 15pt;
   float: left;
   margin-top: -2px;
   padding-left: 45px;
@@ -116,6 +128,8 @@ header{
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+ 
+
 .carousel-caption 
 {
     position: absolute;
@@ -174,22 +188,6 @@ header{
 .material-icons {
     font-size: 10px;
     padding: 10px;
-}
-.icon-search{
-    background-color: white;
-    font-size:10px;
-    height: 44px;
-    margin-top: 10px;
-    margin-left: 80px;
-}
-.input_search{
-    border: none;
-    width: 50%;
-    height: 44px;
-    font-size: 15px;
-    padding-left: 20px;
-    margin-top: 10px;
-   
 }
 
 .name-img{

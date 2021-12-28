@@ -16,9 +16,9 @@
 </head>
 
 <body>
-    <header class="  container-fluid bg-black">
+    <header class="  container-fluid ">
       
-        <nav class="navbar navbar-expand-lg navbar-dark header-row bg-black container">
+        <nav class="navbar navbar-expand-lg navbar-dark header-row container">
            
 
                 <a class="navbar-brand nav-link " href="#">
@@ -38,9 +38,9 @@
                         </div>
                     </form>
                     <ul>
-                        <h3 class="btn-login">Log In</h3>
+                        <a href="login.php" class="login" >Log In</a>
                         <button class="btn btn-signup">
-                           Sign Up
+                           <a href="signup.php">Sign up</a>
                         </button>
                     </ul>
                     
@@ -93,7 +93,7 @@
                         <h1>
                             Find your inspiration.
                         </h1>
-                        <div class="caption ">
+                    <div class="caption ">
                         <h3>
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
@@ -101,10 +101,28 @@
                             <h3>Start for free</h3></button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
-                              </div>
                             </div>
                     </div>
-                    
+                    </div>
+                </div>   
+                <div class="carousel-item">
+                    <img src="./assets/img/img2.jpg" class="d-block w-100 img-form img-fluid" alt="">
+                    <div class="carousel-caption caption-centered">
+                        <h1>
+                            Find your inspiration.
+                        </h1>
+                    <div class="caption ">
+                        <h3>
+                            Join the Flickr community, home to tens of billions of photos and 2 million groups.
+                        </h3>
+                        <button class=" btn btn-light button-style" type="button">
+                            <h3>Start for free</h3></button>
+                            <div class="name-img mt-5">
+                                <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
+                            </div>
+                    </div>
+                    </div>
+                </div>   
             
                 <div class="carousel-item">
                     <img src="./assets/img/img3.jpg" class="d-block w-100 img-form img-fluid" alt="">
@@ -131,12 +149,12 @@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                 <span class="visually-hidden">Next</span>
             </button>
 
