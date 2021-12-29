@@ -9,10 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/btl.css">
+    <link rel="stylesheet" href=".././assets/css/btl.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/reposivebtl.css">
-    <link rel="stylesheet" href="./assets/icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href=".././assets/css/reposivebtl.css">
+    <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 
                 <a class="navbar-brand nav-link " href="#">
                     <div class="logo">
-                        <img src="./assets/img/logo3.png" alt="" class="img-logo">
+                        <img src=".././assets/img/logo3.png" alt="" class="img-logo">
                         <h2>flickr</h2>
                     </div>
                 </a>
@@ -59,7 +59,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./assets/img/img1.jpg" class="d-block w-100 img-form img-fluid" alt="">
+                    <img src=".././assets/img/img1.jpg" class="d-block w-100 img-form img-fluid" alt="">
                     <div class="carousel-caption caption-centered">
                         <h1>
                             Find your inspiration.
@@ -88,7 +88,7 @@
 
                 </div>
                 <div class="carousel-item">
-                    <img src="./assets/img/img2.jpg" class="d-block w-100 img-form img-fluid" alt="">
+                    <img src=".././assets/img/img2.jpg" class="d-block w-100 img-form img-fluid" alt="">
                     <div class="carousel-caption caption-centered">
                         <h1>
                             Find your inspiration.
@@ -98,7 +98,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button">
-                            <h3>Start for free</h3></button>
+                            <a href =" signup.php" class="" >start for free </a></button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
                             </div>
@@ -106,7 +106,7 @@
                     </div>
                 </div>   
                 <div class="carousel-item">
-                    <img src="./assets/img/img2.jpg" class="d-block w-100 img-form img-fluid" alt="">
+                    <img src=".././assets/img/img2.jpg" class="d-block w-100 img-form img-fluid" alt="">
                     <div class="carousel-caption caption-centered">
                         <h1>
                             Find your inspiration.
@@ -125,7 +125,7 @@
                 </div>   
             
                 <div class="carousel-item">
-                    <img src="./assets/img/img3.jpg" class="d-block w-100 img-form img-fluid" alt="">
+                    <img src=".././assets/img/img3.jpg" class="d-block w-100 img-form img-fluid" alt="">
                     <div class="carousel-caption caption-centered ">
                         <h1>
                             Find your inspiration.

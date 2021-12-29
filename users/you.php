@@ -15,9 +15,9 @@ if (!isset($_SESSION['LoginOK'])) {
     <title> You|Flickr</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/you_style.css">
-    <link rel="stylesheet" href="./assets/css/reponsive.css">
-    <link rel="stylesheet" href="./assets/icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href=".././assets/css/you_style.css">
+    <link rel="stylesheet" href=".././assets/css/reponsive.css">
+    <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/you_responsive.css">
@@ -31,7 +31,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
             <a class="navbar-brand nav-link " href="index.php">
                 <div class="logo">
-                    <img src="./assets/img/logo3.png" alt="" class="img-logo">
+                    <img src=".././assets/img/logo3.png" alt="" class="img-logo">
                     <h2>flickr</h2>
                 </div>
             </a>
@@ -116,7 +116,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </span>
                 </div>
                 <div class="nav-item nav-item-mb">
-                    <img src="./assets/img/avtimg.jfif" alt="" class=" img-user">
+                    <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user">
                 </div>
                 <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
                     <span class="material-icons ms-3 mt-2 ">

@@ -9,24 +9,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/singup.css">
+    <link rel="stylesheet" href=".././assets/css/singup.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/reponsiveSignUp.css">
+    <link rel="stylesheet" href=".././assets/css/reponsiveSignUp.css">
 </head>
 
 <body>
     <nav>
         <div class="brand mb-3">
-            <img src="./assets/img/logonav.png" class="img-logo" alt="">
+            <img src=".././assets/img/logonav.png" class="img-logo" alt="">
             <h2 class="ms-5 ">flickr</h2>
         </div>
     </nav>
 
     <div class="img-sign ">
-        <img src="./assets/img/imgsign.jpg" alt="" class="imgbtn img-fluid">
+        <img src=".././assets/img/imgsign.jpg" alt="" class="imgbtn img-fluid">
         
             <form action="process_signup.php" method="POST" class="form main " id="form-1">
-                <img src="./assets/img/logonav.png" alt="" class="img-logoform img-fluid mt-1">
+                <img src=".././assets/img/logonav.png" alt="" class="img-logoform img-fluid mt-1">
               
                 <h6 class="heading mt-1 ">Sign in for Flickr</h6>
                 

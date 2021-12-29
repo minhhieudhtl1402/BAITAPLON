@@ -17,9 +17,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/reponsive.css">
-    <link rel="stylesheet" href="./assets/icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/css/reponsive.css">
+    <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -31,7 +31,7 @@
     
     <a class="navbar-brand nav-link " href="">
         <div class="logo">
-            <img src="./assets/img/logo3.png" alt="" class="img-logo">
+            <img src=".././assets/img/logo3.png" alt="" class="img-logo">
             <h2>flickr</h2>
         </div>
     </a>
@@ -122,7 +122,7 @@
             </span>
         </div>
         <div class="nav-item nav-item-mb">
-            <img src="./assets/img/avtimg.jfif" alt="" class=" img-user">
+            <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user">
         </div>
         <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php" > 
         <span class="material-icons ms-3 mt-2 ">
@@ -185,9 +185,9 @@
                             </h3>
                             <div class="row">
                                 <div class="col-md-6 user">
-                                    <img src="./assets/img/user1.jfif" alt="" class=" img-fluid img-us">
+                                    <img src=".././assets/img/user1.jfif" alt="" class=" img-fluid img-us">
                                     <div class="body">
-                                        <img src="./assets/img/avt1.jfif" alt="" class="img-avt img-fluid">
+                                        <img src=".././assets/img/avt1.jfif" alt="" class="img-avt img-fluid">
                                         <div class="title-user">
                                             <a href="#" class="name"> Zach Chang
                                                 <span>PRO</span>
@@ -203,9 +203,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="./assets/img/user2.jfif" alt="" class=" img-fluid img-us">
+                                    <img src=".././assets/img/user2.jfif" alt="" class=" img-fluid img-us">
                                     <div class="body">
-                                        <img src="./assets/img/avt2.jfif" alt="" class="img-avt img-fluid">
+                                        <img src=".././assets/img/avt2.jfif" alt="" class="img-avt img-fluid">
                                         <div class="title-user">
                                             <a href="#" class="name"> Dimitry Roulland <span>PRO</span>
                                             </a>
@@ -223,9 +223,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="./assets/img/user3.jfif" alt="" class=" img-fluid img-us">
+                                    <img src=".././assets/img/user3.jfif" alt="" class=" img-fluid img-us">
                                     <div class="body">
-                                        <img src="./assets/img/avt3.jfif" alt="" class="img-avt img-fluid">
+                                        <img src=".././assets/img/avt3.jfif" alt="" class="img-avt img-fluid">
                                         <div class="title-user">
                                             <a href="#" class="name"> NEKOFighter <span>PRO</span>
                                             </a>
@@ -241,9 +241,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="./assets/img/user4.jfif" alt="" class=" img-fluid img-us">
+                                    <img src=".././assets/img/user4.jfif" alt="" class=" img-fluid img-us">
                                     <div class="body">
-                                        <img src="./assets/img/avt4.jfif" alt="" class="img-avt img-fluid">
+                                        <img src=".././assets/img/avt4.jfif" alt="" class="img-avt img-fluid">
                                         <div class="title-user">
                                             <a href="#" class="name"> Ulf Bodin <span>PRO</span>
                                             </a>
@@ -276,24 +276,24 @@
                                 </h3>
                                 <div class="row mt-1 ps-3 pe-3">
                                     <div class="col-md-2">
-                                        <img alt="  " class="img-fluid img-dis2" src="./assets/img/images1.jfif" />
+                                        <img alt="  " class="img-fluid img-dis2" src=".././assets/img/images1.jfif" />
                                     </div>
                                     <div class="col-md-5">
-                                        <img alt="" class="img-fluid img-dis2" src="./assets/img/bg-img7.jpg" />
+                                        <img alt="" class="img-fluid img-dis2" src=".././assets/img/bg-img7.jpg" />
                                     </div>
                                     <div class="col-md-5">
-                                        <img alt="  " class="img-fluid img-dis2" src="./assets/img/bg-img4.jpg" />
+                                        <img alt="  " class="img-fluid img-dis2" src=".././assets/img/bg-img4.jpg" />
                                     </div>
                                 </div>
                                 <div class="row  ps-3 pe-3 pt-1">
                                     <div class="col-md-4">
-                                        <img alt=" " class="img-fluid img-dis2" src="./assets/img/bg-img3.jpg" />
+                                        <img alt=" " class="img-fluid img-dis2" src=".././assets/img/bg-img3.jpg" />
                                     </div>
                                     <div class="col-md-4">
-                                        <img alt=" " class="img-fluid img-dis2" src="./assets/img/bg-img5.jpg" />
+                                        <img alt=" " class="img-fluid img-dis2" src=".././assets/img/bg-img5.jpg" />
                                     </div>
                                     <div class="col-md-4">
-                                        <img alt="" class="img-fluid img-dis2" src="./assets/img/bg-img6.jpg" />
+                                        <img alt="" class="img-fluid img-dis2" src=".././assets/img/bg-img6.jpg" />
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +310,7 @@
                         </div>
                         <div class="row">
                             <div class="body">
-                                <img src="./assets/img/logo.png" alt="" class="img-avt img-fluid gr-avt">
+                                <img src=".././assets/img/logo.png" alt="" class="img-avt img-fluid gr-avt">
                                 <div class="title-user mt-4">
                                     <a href="https://www.flickr.com/groups/52242404882@N01" class="name ">
                                         Flickr-at-Home
@@ -326,18 +326,18 @@
                         </div>
                         <div class="row ps-3 pe-4">
                             <div class="col-md-4 ">
-                                <img alt=" " class="img-fluid img-dis2" src="./assets/img/img8.jfif" />
+                                <img alt=" " class="img-fluid img-dis2" src=".././assets/img/img8.jfif" />
                             </div>
                             <div class="col-md-4">
-                                <img alt=" " class="img-fluid img-dis2" src="./assets/img/img10.jfif" />
+                                <img alt=" " class="img-fluid img-dis2" src=".././assets/img/img10.jfif" />
                             </div>
                             <div class="col-md-4">
-                                <img alt="" class="img-fluid img-dis2" src="./assets/img/img11.jfif" />
+                                <img alt="" class="img-fluid img-dis2" src=".././assets/img/img11.jfif" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="body">
-                                <img src="./assets/img/images2.jfif" alt="" class="img-avt img-fluid gr-avt">
+                                <img src=".././assets/img/images2.jfif" alt="" class="img-avt img-fluid gr-avt">
                                 <div class="title-user mt-4">
                                     <a href="#" class="name ">
                                         * Vanishing Points *
@@ -351,13 +351,13 @@
                             </div>
                             <div class="row mt-1 ps-4 mb-3">
                                 <div class="col-md-2">
-                                    <img alt="  " class="img-fluid img-dis2" src="./assets/img/images2.jfif" />
+                                    <img alt="  " class="img-fluid img-dis2" src=".././assets/img/images2.jfif" />
                                 </div>
                                 <div class="col-md-5">
-                                    <img alt="" class="img-fluid img-dis2" src="./assets/img/img12.jfif" />
+                                    <img alt="" class="img-fluid img-dis2" src=".././assets/img/img12.jfif" />
                                 </div>
                                 <div class="col-md-5">
-                                    <img alt="  " class="img-fluid img-dis2" src="./assets/img/img14.jfif" />
+                                    <img alt="  " class="img-fluid img-dis2" src=".././assets/img/img14.jfif" />
                                 </div>
                             </div>
 
@@ -369,7 +369,7 @@
                                 Flickr Blog
                             </div>
 
-                            <img class=" img-yb  mt-3" alt="" src="./assets/img/flickr.jpg" />
+                            <img class=" img-yb  mt-3" alt="" src=".././assets/img/flickr.jpg" />
                             <div class="card-block">
                                 <a class="card-title title-yb mt-2" href="https://blog.flickr.net/en">
                                     NOW OPEN – Your Best Shot 2021
