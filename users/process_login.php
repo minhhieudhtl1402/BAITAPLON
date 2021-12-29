@@ -13,6 +13,7 @@ if(isset($_POST['btnLogin'])){
     
     $result = mysqli_query($conn,$sql);
     $rs= mysqli_fetch_array($result);
+    
     if(mysqli_num_rows($result) > 0){
         $_SESSION['LoginOK'] = $email;
          $_SESSION['nameuser']=$rs['first_name'].' '.$rs['last_name'];
@@ -35,7 +36,3 @@ if(isset($_POST['btnLogin'])){
 else {
     header('location: index.php');
 }
-
-
-
-?>

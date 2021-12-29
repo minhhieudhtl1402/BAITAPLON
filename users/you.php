@@ -118,6 +118,11 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                     <img src="./assets/img/avtimg.jfif" alt="" class=" img-user">
                 </div>
+                <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
+                    <span class="material-icons ms-3 mt-2 ">
+                        logout
+                    </span>
+                </a>
 
             </div>
 
@@ -153,6 +158,8 @@ if (!isset($_SESSION['LoginOK'])) {
 
         </div>
     </div>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
     <div class="container">
         <ul class="nav nav-tabs tab-Content container  tabUI " id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
