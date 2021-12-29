@@ -15,8 +15,8 @@ if(isset($_POST['btnLogin'])){
     $rs=mysqli_fetch_array($result);
     if(mysqli_num_rows($result) > 0){
         
-        $_SESSION['LoginOK'] = $name;
-        $_SESSION['adminname']=$rs['name'];
+        $_SESSION['AdminLogin'] = $name;
+        // $_SESSION['adminname']=$rs['name'];
         header("location: users.php"); 
     }else{
         $error = "Bạn nhập thông tin chưa chính xác";
