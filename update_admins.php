@@ -1,3 +1,24 @@
+<?php
+//admin.php truyền dl sang
+//deleteUsers.php nhận dữ liệu từ admin.php gửi sang
+$ma_admin = $_GET['id'];
+//b1:kết nối database server
+$conn = mysqli_connect('localhost', 'root', '', 'flickr');
+if (!$conn) {
+    die("Kết nối thất bại.Vui lòng kiểm tra lại các thông tin máy chủ");
+}
+//b2:thực hiện truy vấn
+$sql = "SELECT * FROM admins where admin_id=$ma_admin ";
+
+$result = mysqli_query($conn, $sql);
+//B3:xử lí kết quả
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+}
+//b4:đóng kết nối
+mysqli_close($conn);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,30 +29,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/admins.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Sửa Thông Tin Quản Lý</title>
 </head>
 
 <body>
     <main>
         <div class="container">
-            <h5 class="text-center text-primary mt-5">Thêm mới Người Dùng</h5>
-            <!-- Form thêm Dữ liệu nhân viên -->
-            <form action="process_add_admins.php" method="post">
+            <h5 class="text-center text-primary mt-5">Sửa Thông Tin Quản Lý</h5>
+            <form action="process-update-admins.php" method="post">
                 <div class="form-group">
-                    <label for="txtid_admin">admin_id</label>
-                    <input type="text" class="form-control" id="txtid_admin" name="txtadmin_id" placeholder="admin_id">
-
+                    <label for="txtId">Id</label>
+                    <input readonly type="text" class="form-control" id="txtId" name="txtId" placeholder="Admin_id" value="<?php echo $row['admin_id']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="txtTen">Name</label>
-                    <input type="text" class="form-control" id="txtTen" name="txtTen" placeholder="name">
+                    <label for="txtTen">Tên</label>
+                    <input type="text" class="form-control" id="txtTen" name="txtTen" placeholder="Name" value="<?php echo $row['name']; ?>">
 
                 </div>
-
                 <div class="form-group">
                     <label for="txtPass">Pass</label>
-                    <input type="Pass" class="form-control" id="txtPass" name="txtPass" placeholder="Pass">
+                    <input type="pass" class="form-control" id="txtPass" name="txtPass" placeholder=" Pass" value="<?php echo $row['pass']; ?>">
+
                 </div>
+                
                 <button type="submit" class="btn btn-primary mt-3">Lưu lại</button>
             </form>
         </div>

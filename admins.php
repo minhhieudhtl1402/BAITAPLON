@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/admins.css">
+  <link rel="stylesheet" href="assets/css/users.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <title>ADMINS</title>
+  <title>QUẢN LÝ ADMINS</title>
 </head>
 
 <body>
   <div class="container-fluid">
     <div id="background" class="container-fluid bg-image">
-      <h1 class="text-center  mb-5">admins </h1>
-      <button type="button" class="btn btn-outline-primary">Thêm</button>
+      <h1 class="text-center  mb-5">QUẢN LÝ ADMINS </h1>
+      <button type="button" class="btn btn-outline-primary"><a href="add_admins.php">Thêm</a></button>
       <table class="table">
         <thead>
           <tr>
@@ -44,14 +45,13 @@
             while ($row = mysqli_fetch_assoc($result)) {
           ?>
               <tr>
-                <th scope="row"><?php echo $row['admins_id']; ?></th>
-                <td><?php echo $row['last_name']; ?></td>
-                <td><?php echo $row['password']; ?></td>
-                <td><?php echo $row['administrators_id']; ?></td>
-                <td>Sửa</td>
-                <td>Xóa</td>
-                <td><a href=""><i class="bi bi-pencil-square text-black"></i></a></td>
-                <td><a href="delete_admins.php?id=<?php echo $row['admins_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
+                <th scope="row"><?php echo $row['admin_id']; ?></th>
+                <td><?php echo $row['name']; ?></td>
+                <td>********</td>
+                <td><?php echo $row['administrator_id']; ?></td>
+
+                <td><a href="update_admins.php?id=<?php echo $row['admin_id'];?>"><i class="bi bi-pencil-square text-black"></i></a></td>
+                <td><a href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
               </tr>
           <?php
             }
