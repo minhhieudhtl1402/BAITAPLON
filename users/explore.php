@@ -1,8 +1,8 @@
-<?php 
-    session_start();
-    if(!isset($_SESSION['LoginOK'])){
-        header("location:login.php");
-    }
+<?php
+session_start();
+if (!isset($_SESSION['LoginOK'])) {
+    header("location:login.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -126,6 +126,7 @@
                 </nav>
         
     </header>
+<div>
     <ul class="nav nav-tabs tab_Content container  tabUI " id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link  active " id="explore-tab" data-bs-toggle="tab" data-bs-target="#explore" type="button" role="tab" aria-controls="explore" aria-selected="true">Explore</button>
@@ -143,7 +144,7 @@
 <div class="tab-content">
     <div class="container-fluid bg-light tab-pane p-0 pt-3 show active  " id="explore" role="tabpanel" aria-labelledby="explore-tab"> 
         <div class="container ">
-         <div class="row mt-5 ">
+        <div class="row mt-5 ">
              <div class="col-md-2 p-0">
                  <p style="font-size: 25px;">Explore</p>
                  
@@ -417,76 +418,7 @@
         </div>
 
         </div>
-         <div class=" cn-footer container-fluid bg-black p-0">
-   
-             <nav class="navbar  header-row bg-dark ">
-                <div class="container fter pb-3 pt-3">
-                         <a class=" nav-item " href="#">
-                         <a href="" class=" item-footer">About</a>
-                   
-                         </a>
-                     
-                         <a class="nav-item ">
-                                 <a href="" class=" item-footer">Jobs</a>    
-                         </a>
-                         <a class="nav-item ">
-                          <a href="" class=" item-footer">Blog</a>       
-                             </a>
-                         <a class="nav-item ">
-                             <a href="" class=" item-footer">Report abuse</a>    
-                         </a>
-                         <a class="nav-item ">
-                          <a href="" class=" item-footer">Developers</a>       
-                         </a>
-                         <a class="nav-item ">
-                        <a href="" class=" item-footer">Guidelines</a>      
-                         </a>
-                         <a class="nav-item ">
-                          <a href="" class=" item-footer">Help</a>          
-                         </a>
-                         <a class="nav-item ">
-                         <a href="" class=" item-footer">Help forum</a>       
-                         </a>
-                         <a class="nav-item ">
-                         <a href="" class=" item-footer">English 
-                             <i class="ti-angle-down p-0"></i>
-                         </a>  
-                               
-                         </a>
-                 </div>
-                 <div class="container mt-2 pb-3 pt-2">
-                 
-                     <div class="nav-item it">
-                         <a href="" class="item-footer ms-3 text-secondary">Privacy</a> 
-                        
-                     
-                      <a href="" class="item-footer ms-3 text-secondary ">	Terms</a>
-                    <a href="" class="item-footer ms-3 text-secondary">Cookies</a>
-                     </div>
-                     <div class="nav-item text-secondary">
-                         SmugMug+Flickr. Connecting people through photography. 
-
-                     </div>
-                     <div class="nav-item">
-                         <i class="ti-facebook text-secondary ms-3" style="font-size: 20px;"></i>
-                         <i class="ti-twitter-alt text-secondary ms-3" style="font-size: 20px;"></i>
-                         <i class="ti-instagram text-secondary ms-3" style="font-size: 20px;"></i>
-
-                     </div>
-                 </div>
-             
-                    
-     
-                         
-                         
-                             
-                               
-                            
-             </nav>
-         </div>
-     
-       
-
+        
     </div>
     <div class="container-fluid bg-light tab-pane p-0 pt-3  " id="trending" role="tabpanel" aria-labelledby="trending-tab">
         
@@ -646,7 +578,7 @@
 
                 
             </div>
-            <div class=" cn-footer container-fluid bg-black p-0 mt-5">
+            <!-- <div class=" cn-footer container-fluid bg-black p-0 mt-5">
     
                 <nav class="navbar  header-row bg-dark ">
                 <div class="container fter pb-3 pt-3">
@@ -707,7 +639,7 @@
                         </div>
                     </div>                                                                                                                                                                                                            
                 </nav>
-            </div>
+            </div> -->
         
     </div>
     <div class="container-fluid bg-light tab-pane  p-0 pt-3  " id="events" role="tabpanel" aria-labelledby="events-tab">
@@ -856,7 +788,7 @@
                     
                 </div>
             </div>
-            <div class=" cn-footer container-fluid bg-black p-0 mt-5">
+            <!-- <div class=" cn-footer container-fluid bg-black p-0 mt-5">
     
                 <nav class="navbar  header-row bg-dark ">
                 <div class="container fter pb-3 pt-3">
@@ -926,12 +858,80 @@
                                 
                             
                 </nav>
-            </div>
+            </div> -->
         
 
     </div>
 </div>
-    
+</div>
+<div class=" cn-footer container-fluid bg-black p-0">
+   
+   <nav class="navbar  header-row bg-dark ">
+      <div class="container fter pb-3 pt-3">
+               <a class=" nav-item " href="#">
+               <a href="" class=" item-footer">About</a>
+         
+               </a>
+           
+               <a class="nav-item ">
+                       <a href="" class=" item-footer">Jobs</a>    
+               </a>
+               <a class="nav-item ">
+                <a href="" class=" item-footer">Blog</a>       
+                   </a>
+               <a class="nav-item ">
+                   <a href="" class=" item-footer">Report abuse</a>    
+               </a>
+               <a class="nav-item ">
+                <a href="" class=" item-footer">Developers</a>       
+               </a>
+               <a class="nav-item ">
+              <a href="" class=" item-footer">Guidelines</a>      
+               </a>
+               <a class="nav-item ">
+                <a href="" class=" item-footer">Help</a>          
+               </a>
+               <a class="nav-item ">
+               <a href="" class=" item-footer">Help forum</a>       
+               </a>
+               <a class="nav-item ">
+               <a href="" class=" item-footer">English 
+                   <i class="ti-angle-down p-0"></i>
+               </a>  
+                     
+               </a>
+       </div>
+       <div class="container mt-2 pb-3 pt-2">
+       
+           <div class="nav-item it">
+               <a href="" class="item-footer ms-3 text-secondary">Privacy</a> 
+              
+           
+            <a href="" class="item-footer ms-3 text-secondary ">	Terms</a>
+          <a href="" class="item-footer ms-3 text-secondary">Cookies</a>
+           </div>
+           <div class="nav-item text-secondary">
+               SmugMug+Flickr. Connecting people through photography. 
+
+           </div>
+           <div class="nav-item">
+               <i class="ti-facebook text-secondary ms-3" style="font-size: 20px;"></i>
+               <i class="ti-twitter-alt text-secondary ms-3" style="font-size: 20px;"></i>
+               <i class="ti-instagram text-secondary ms-3" style="font-size: 20px;"></i>
+
+           </div>
+       </div>
+   
+          
+
+               
+               
+                   
+                     
+                  
+   </nav>
+</div>
+
       
      
     <script src="assets/js/main.js"></script>
