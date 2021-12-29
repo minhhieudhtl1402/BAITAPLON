@@ -15,9 +15,10 @@ if(isset($_POST['btnLogin'])){
     $rs= mysqli_fetch_array($result);
     if(mysqli_num_rows($result) > 0){
         $_SESSION['LoginOK'] = $email;
-         $_SESSION['nameuser']= $rs['first_name'];
+         $_SESSION['nameuser']=$rs['first_name'].' '.$rs['last_name'];
          $_SESSION['age']= $rs['age'];
          $_SESSION['registation_date']= $rs['registation_date'];
+
         header("location: index.php"); 
        
     }else{

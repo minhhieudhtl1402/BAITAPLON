@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark header-row bg-black container">
 
 
-            <a class="navbar-brand nav-link " href="#">
+            <a class="navbar-brand nav-link " href="index.php">
                 <div class="logo">
                     <img src="./assets/img/logo3.png" alt="" class="img-logo">
                     <h2>flickr</h2>
@@ -67,14 +67,14 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown nav-item-mb">
-                        <a class="nav-link ms-3" href="" id="navbarDropdownnn" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link ms-3" href="explore.php" id="navbarDropdownnn" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <a href="explore.php " class="text-white ms-3" style="text-decoration: none;">Explores</a>
                         </a>
                         <ul class=" dropdown-menu" aria-labelledby="navbarDropdownnn">
-                            <li><a class="dropdown-item" href="explore.html">Recent Photos</a></li>
-                            <li><a class="dropdown-item" href="explore.html">Trending</a></li>
-                            <li><a class="dropdown-item" href="explore.html">Events</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Recent Photos</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Trending</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Events</a></li>
                             <li><a class="dropdown-item" href="https://www.flickr.com/commons">The Commons</a></li>
                             <li><a class="dropdown-item" href="https://www.flickr.com/photos/flickr/galleries">Flickr
                                     Galleries</a></li>
@@ -155,7 +155,7 @@
 
                 </div>
                 <div class="row mt-md-5">
-                    <h5 style="display:inline-block" class="col-md-3"><?php echo  $_SESSION['age'] ?> Tuổi</h5>
+                    <h5 style="display:inline-block" class="col-md-3"><?php echo $_SESSION['LoginOK'];?></h5>
                     <h5 style="display:inline-block" class="col-md-3">0 Follower</h5>
                     <h5 style="display:inline-block" class="col-md-3">0 Following</h5>
                 </div>
@@ -204,7 +204,7 @@
         <!-- Tab panes -->
         <div class="tab-content border border-light shadow-lg">
             <!-- Bat dau  About -->
-            <div class="container-fluid bg-light tab-pane active-black p-0  " id="About" role="tabpanel"
+            <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel"
                 aria-labelledby="About-tab">
 
                 <div class="container" style="height: 84;">

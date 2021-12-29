@@ -1,7 +1,7 @@
 <?php session_start();
-    if(!isset($_SESSION['LoginOK'])){
-        header("location:loginAD.php");
-    }
+if (!isset($_SESSION['LoginOK'])) {
+  header("location:loginAD.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
     <div id="background" class="container-fluid bg-image">
       <h1 class="text-center  mb-5">Quản Lí Người Dùng </h1>
       <a href="add_users.php" class="btn btn-outline-primary">Thêm</a>
-      
+
       <table class="table">
         <thead>
           <tr>
@@ -59,10 +59,10 @@
                 <td><?php echo $row['last_name']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['password']; ?></td>
-                <td><?php echo $row['age']; ?>mdo</td>
+                <td><?php echo $row['age']; ?></td>
                 <td><?php echo $row['registation_date']; ?></td>
                 <td><?php echo $row['address']; ?></td>
-                <td><a href=""><i class="bi bi-pencil-square text-black"></i></a></td>
+                <td><a href="updateUsers.php?id=<?php echo $row['users_id']; ?>"><i class="bi bi-pencil-square text-black"></i></a></td>
                 <td><a href="deleteUsers.php?id=<?php echo $row['users_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
               </tr>
           <?php
