@@ -1,10 +1,9 @@
-<?php 
-    session_start();
+<?php session_start();
     if(!isset($_SESSION['LoginOK'])){
-        header("location:login.php");
+        header("location:loginAD.php");
     }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,7 +142,7 @@
             <div class="col-md-1"></div>
             <div class="col-8 mt-md-3">
                 <div class="row">
-                    <h2 class="col-md-4 col-9">Hiếu Vũ</h2>
+                    <h2 class="col-md-4 col-9"><?php echo  $_SESSION['nameuser'] ?></h2>
                     <div class="dropdown col-md-8 col-3 ">
                         <button class=" btn btn-outline-light" id="aa" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">...</button>
@@ -156,7 +155,7 @@
 
                 </div>
                 <div class="row mt-md-5">
-                    <h5 style="display:inline-block" class="col-md-3">hieuv3456</h5>
+                    <h5 style="display:inline-block" class="col-md-3"><?php echo  $_SESSION['age'] ?> Tuổi</h5>
                     <h5 style="display:inline-block" class="col-md-3">0 Follower</h5>
                     <h5 style="display:inline-block" class="col-md-3">0 Following</h5>
                 </div>
@@ -260,7 +259,7 @@
                             </div>
                             <div class="col-md-2">
                                 <p>
-                                    December 2021</p>
+                                    <?php echo  $_SESSION['registation_date'] ?></p>
                             </div>
 
                         </div>
@@ -272,7 +271,7 @@
                             <div class="col-md-2">
                                 <a class="text-decoration-none" href="">
                                     <p>
-                                        hieuv3456@gmail.com</p>
+                                        <?php echo $_SESSION['LoginOK'] ?></p>
                                 </a>
 
                             </div>

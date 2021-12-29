@@ -12,10 +12,14 @@ if(isset($_POST['btnLogin'])){
 
     
     $result = mysqli_query($conn,$sql);
+    $rs= mysqli_fetch_array($result);
     if(mysqli_num_rows($result) > 0){
-        
         $_SESSION['LoginOK'] = $email;
+         $_SESSION['nameuser']= $rs['first_name'];
+         $_SESSION['age']= $rs['age'];
+         $_SESSION['registation_date']= $rs['registation_date'];
         header("location: index.php"); 
+       
     }else{
         $error = "Bạn nhập thông tin chưa chính xác";
         header("location: login.php?error=$error"); 

@@ -25,8 +25,8 @@ if(!isset($_POST['btnSignup'])){
         
     }else{
         
-        $pass_hash= password_hash($pass ,PASSWORD_DEFAULT);
-        $sql2= "INSERT INTO users(first_name, last_name, email, password, age) values ('$fName',' $lName','$email' ,'$pass_hash','$age' )";
+        // $pass_hash= password_hash($pass ,PASSWORD_DEFAULT);
+        $sql2= "INSERT INTO users(first_name, last_name, email, password, age) values ('$fName',' $lName','$email' ,'$pass','$age' )";
         $result1 = mysqli_query($conn, $sql2);
         if($result1 == true){
             header("location:login.php");
