@@ -7,6 +7,9 @@
     #showcase-add{
         visibility: hidden;
     }
+    /* #nameuser{
+        margin-left: 10px;
+    } */
 
 
 }
@@ -18,4 +21,13 @@
 
 @media (min-width:64em) {
 
+    #email{
+        
+    }
+    #follow{
+        margin-left: 60px;
+    }
+    #following{
+
+    }
 }

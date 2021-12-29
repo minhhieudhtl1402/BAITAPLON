@@ -37,10 +37,10 @@ mysqli_close($conn);
         <div class="container">
             <h5 class="text-center text-primary mt-5">Sửa Thông Tin Người Dùng</h5>
             <!-- Form thêm Dữ liệu nhân viên -->
-            <form action="process-add-users.php" method="post">
+            <form action="process-update-users.php" method="post">
                 <div class="form-group">
                     <label for="txtHo">Id</label>
-                    <input disabled type="text" class="form-control" id="txtHo" name="txtHo" placeholder="Id" value="<?php echo $row['users_id']; ?>">
+                    <input readonly type="text" class="form-control" id="txtId" name="txtId" placeholder="Id" value="<?php echo $row['users_id']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="txtHo">Họ</label>
@@ -65,7 +65,7 @@ mysqli_close($conn);
                 </div>
                 <div class="form-group">
                     <label for="txtAge">Tuổi</label>
-                    <input type="number" class="form-control" id=txtTuoi" name="txtAge" placeholder="Nhập Tuổi" value="<?php echo $row['age']; ?>">
+                    <input type="number" class="form-control" id=txtAge" name="txtAge" placeholder="Nhập Tuổi" value="<?php echo $row['age']; ?>">
 
                 </div>
                 <div class="form-group">

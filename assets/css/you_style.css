@@ -204,3 +204,30 @@ body .tabUI {
  #Stats-photo{
      width: 30%;
  }
+ .cn-footer{
+   
+    display: flex;
+     justify-content: space-around;
+     background:rgba(0,0,0,0.4);
+     
+     bottom: 0;
+     width: 100%;
+     margin-bottom: 0px;
+     z-index: -1;
+     
+  }
+  .fter{
+      border-bottom: 1px solid #7e7c7c;
+  }
+  .item-footer{
+    font-size: 14px;
+    line-height: 1.2em;
+    color:#fff;
+    border:none;
+    text-decoration: none;
+    margin: 0px 4px;
+  }
+  .item-footer:hover{
+      color:#bdbdbd;
+      border:none;
+  }
