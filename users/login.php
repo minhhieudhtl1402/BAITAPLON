@@ -52,7 +52,7 @@
                             <button class="form-submit" name="btnLogin">Submit</button>
                             <hr>
                             <p class="loginhere">Not a Flickr member?
-                                <a href="#" class="loginhere-link">Sign up here</a>
+                                <a href="signup.php" class="loginhere-link">Sign up here</a>
                             </p>
 
                     </div>

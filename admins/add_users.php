@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['LoginOK'])) {
+  header("location:loginadmin.php");
+}
+?>  
 <!DOCTYPE html>
 <html lang="en">
 

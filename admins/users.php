@@ -1,9 +1,9 @@
-<?php session_start();
+<?php
+session_start();
 if (!isset($_SESSION['LoginOK'])) {
-  header("location:loginAD.php");
+  header("location:loginadmin.php");
 }
-
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +14,35 @@ if (!isset($_SESSION['LoginOK'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/users.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <title>MANAGE USERS</title>
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <!-- <h3>Xin chào <?php echo  $_SESSION['LoginOK'] = $name;; ?></h3> -->
+          <a type="button" href="adminLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container-fluid">   
     <div id="background" class="container-fluid bg-image">
       <h1 class="text-center  mb-5">Quản Lí Người Dùng </h1>
       <a href="add_users.php" class="btn btn-outline-primary">Thêm</a>

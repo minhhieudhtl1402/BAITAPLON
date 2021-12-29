@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['LoginOK'])) {
-    header("location:loginAD.php");
+    header("location:login.php");
 }
 ?>
 
@@ -158,7 +158,6 @@ if (!isset($_SESSION['LoginOK'])) {
 
         </div>
     </div>
-    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 
     <div class="container">
         <ul class="nav nav-tabs tab-Content container  tabUI " id="myTab" role="tablist">
@@ -305,7 +304,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             <h4>Your most popular photos will appear here.</h4>
                             <p>Set your photos to public for more faves, comments and views.</p>
                             <p>For even more exposure, add them to Groups</p>
-                            <a class="text-decoration-none" href="">
+                            <a class="text-decoration-none" href="" >
                                 <p>Go to Camera Roll</p>
                             </a>
                         </div>

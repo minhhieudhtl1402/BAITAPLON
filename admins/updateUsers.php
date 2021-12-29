@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['LoginOK'])) {
+  header("location:loginadmin.php");
+}
+?>  
+<?php
 //admin.php truyền dl sang
 //deleteUsers.php nhận dữ liệu từ admin.php gửi sang
 $ma_user = $_GET['id'];
