@@ -404,3 +404,25 @@ span.material-icons:hover{
 .uploadImg{
     margin-top: 50%;
 }
+
+
+/* //print */
+
+
+
+.btnprint{
+    border: solid 2px #000;
+    padding: 16px 34px;
+
+}
+.btnprint:hover{
+    background-color: #000;
+    color: #fff;
+}
+.item-footer-pr{
+    color:#fff;
+}
+.item-footer-pr :hover{
+    color:#ddd;
+
+}

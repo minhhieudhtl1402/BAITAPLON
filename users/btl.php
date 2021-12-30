@@ -69,7 +69,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button" >
-                            <h3> Start for free</h3></button>
+                            <a href="signup.php " class="text-decoration-none text-black" style="font-size:25px; font-weight: 700">Start For Free</a></button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
               
@@ -98,7 +98,9 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button">
-                            <a href =" signup.php" class="" >start for free </a></button>
+                            <a href="signup.php " class="text-decoration-none text-black" style="font-size:25px; font-weight: 700">Start For Free</a>
+                          
+                        </button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
                             </div>
@@ -135,8 +137,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class="btn btn-light button-style " type="button">
-                            <h3> Start for free
-                            </h3>
+                            <a href="signup.php " class="text-decoration-none text-black" style="font-size:25px; font-weight: 700">Start For Free</a>
                             </button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>

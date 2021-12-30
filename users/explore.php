@@ -80,7 +80,7 @@ if (!isset($_SESSION['LoginOK'])) {
                         <li class="nav-item dropdown nav-item-mb ">
                             <a class="nav-link ms-3" href="#" id="navbarDropdownn" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <a href="explore.html " class="text-white ms-3" style="text-decoration: none;">Prints</a>
+                                <a href="prints.php " class="text-white ms-3" style="text-decoration: none;">Prints</a>
                             </a>
                             <ul class=" dropdown-menu" aria-labelledby="navbarDropdownn">
                                 <li><a class="dropdown-item" href="#">Prints & Wall Art</a></li>
@@ -578,68 +578,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
                 
             </div>
-            <!-- <div class=" cn-footer container-fluid bg-black p-0 mt-5">
-    
-                <nav class="navbar  header-row bg-dark ">
-                <div class="container fter pb-3 pt-3">
-                            <a class=" nav-item " href="#">
-                            <a href="" class=" item-footer">About</a>
-                        
-                            </a>
-                        
-                            <a class="nav-item ">
-                                    <a href="" class=" item-footer">Jobs</a>
-                                
-                            </a>
-                            <a class="nav-item ">
-                            <a href="" class=" item-footer">Blog</a>       
-                                </a>
-                            <a class="nav-item ">
-                                <a href="" class=" item-footer">Report abuse</a>    
-                            </a>
-                            <a class="nav-item ">
-                            <a href="" class=" item-footer">Developers</a>       
-                            </a>
-                            <a class="nav-item ">
-                        <a href="" class=" item-footer">	Guidelines</a>      
-                            </a>
-                            <a class="nav-item ">
-                            <a href="" class=" item-footer">Help</a>          
-                            </a>
-                            <a class="nav-item ">
-                            <a href="" class=" item-footer">Help forum</a>       
-                            </a>
-                            <a class="nav-item ">
-                            <a href="" class=" item-footer">English 
-                                <i class="ti-angle-down p-0"></i>
-                            </a>  
-                                
-                            </a>
-                            
-                        
-                    </div>
-                    <div class="container mt-2 pb-3 pt-2">
-                    
-                        <div class="nav-item">
-                            <a href="" class="item-footer ms-3 text-secondary">Privacy</a> 
-                        
-                        
-                        <a href="" class="item-footer ms-3 text-secondary ">	Terms</a>
-                    <a href="" class="item-footer ms-3 text-secondary">Cookies</a>
-                        </div>
-                        <div class="nav-item text-secondary">
-                            SmugMug+Flickr. Connecting people through photography. 
-
-                        </div>
-                        <div class="nav-item">
-                            <i class="ti-facebook text-secondary ms-3" style="font-size: 20px;"></i>
-                            <i class="ti-twitter-alt text-secondary ms-3" style="font-size: 20px;"></i>
-                            <i class="ti-instagram text-secondary ms-3" style="font-size: 20px;"></i>
-
-                        </div>
-                    </div>                                                                                                                                                                                                            
-                </nav>
-            </div> -->
+            
         
     </div>
     <div class="container-fluid bg-light tab-pane  p-0 pt-3  " id="events" role="tabpanel" aria-labelledby="events-tab">

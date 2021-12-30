@@ -78,7 +78,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </li>
                     <li class="nav-item dropdown nav-item-mb ">
                         <a class="nav-link ms-3" href="#" id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <a href="explore.html " class="text-white ms-3" style="text-decoration: none;">Prints</a>
+                            <a href="prints.php " class="text-white ms-3" style="text-decoration: none;">Prints</a>
                         </a>
                         <ul class=" dropdown-menu" aria-labelledby="navbarDropdownn">
                             <li><a class="dropdown-item" href="#">Prints & Wall Art</a></li>

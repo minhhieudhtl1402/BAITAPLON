@@ -83,7 +83,7 @@
             <li class="nav-item dropdown nav-item-mb ">
                 <a class="nav-link ms-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    <a href="explore.html " class="text-white ms-3" style="text-decoration: none;">Prints</a>
+                    <a href="prints.php " class="text-white ms-3" style="text-decoration: none;">Prints</a>
                 </a>
                 <ul class=" dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#">Prints & Wall Art</a></li>

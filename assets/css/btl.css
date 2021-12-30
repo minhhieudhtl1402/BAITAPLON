@@ -140,7 +140,7 @@ header{
 
 }
 .carousel-caption h1{
-    font-size: 35px;
+    font-size: 50px;
     line-height: 56px;
     text-align: center;
     
@@ -148,7 +148,7 @@ header{
     font-weight: 600;
     display: flex;
     position: absolute;
-    margin: 0px 270px;
+    margin: 0px 200px;
 }
 .caption{
     padding: 25px;
