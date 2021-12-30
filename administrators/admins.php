@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if (!isset($_SESSION['AdministratorLogin'])) {
+  header("location:loginAdministrator.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +22,8 @@
     <div id="background" class="container-fluid bg-image">
       <h1 class="text-center  mb-5">QUẢN LÝ ADMINS </h1>
       <button type="button" class="btn btn-outline-primary"><a href="add_admins.php">Thêm</a></button>
+      <?php echo  $_SESSION['AdministratorLogin']; ?>
+          <a type="button" href="administratorLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
       <table class="table">
         <thead>
           <tr>

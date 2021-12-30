@@ -9,9 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href=".././assets/css/login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/reponsiveLogin.css">
+    <link rel="stylesheet" href=".././assets/css/reponsiveLogin.css">
 
 </head>
 
@@ -19,18 +19,18 @@
     <nav>
         <div class="brand mb-3">
 
-            <img src="./assets/img/logonav.png" class="img-logo" alt="">
+            <img src=".././assets/img/logonav.png" class="img-logo" alt="">
             <h2 class="ms-5">flickr</h2>
         </div>
     </nav>
 
     <div class="img-sign">
-        <img src="./assets/img/imgsign.jpg" alt="" class="imgbtx">
+        <img src=".././assets/img/imgsign.jpg" alt="" class="imgbtx">
         <div class="main">
             <form  method="POST" class="form"  action ="process_loginAD.php">
-                <img src="./assets/img/logonav.png" alt="" class="img-logoform">
+                <img src=".././assets/img/logonav.png" alt="" class="img-logoform">
 
-                <h6 class="heading mt-1">Log in to Flickr</h6>
+                <h6 class="heading mt-1">Log in to Administrator Flickr</h6>
                 <div class="row mt-3">
                     <div class="col-md-12">
                         <form role="form">
@@ -41,7 +41,7 @@
                             
                                 <input type="Password" class="form-control mt-3 mb-2" id="inputPass" name="txtPass"
                                     placeholder="Password" required />
-                                                <?php
+                                 <?php
                                 if(isset($_GET['error'])){
                                     echo "<p style='color:red'> {$_GET['error']} </p>";
                                 }
@@ -50,10 +50,7 @@
                                 
                          
                             <button class="form-submit" name="btnLogin">Submit</button>
-                            <hr>
-                            <p class="loginhere">Not a Flickr member?
-                                <a href="#" class="loginhere-link">Sign up here</a>
-                            </p>
+
 
                     </div>
                 </div>

@@ -8,17 +8,17 @@ if(isset($_POST['btnLogin'])){
     if(!$conn){
         die("kết nối thất bại!");
     }
-    $sql = "SELECT * FROM admins WHERE name = '$name' AND pass='$pass'";
+    $sql = "SELECT * FROM administrators WHERE name = '$name' AND pass='$pass'";
 
     
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result) > 0){
         
-        $_SESSION['LoginOK'] = $name;
-        header("location: admin.php"); 
+        $_SESSION['AdministratorLogin'] = $name;
+        header("location: admins.php"); 
     }else{
         $error = "Bạn nhập thông tin chưa chính xác";
-        header("location: loginAD.php?error=$error"); 
+        header("location: loginAdministrator.php?error=$error"); 
     }
 
     
@@ -28,7 +28,7 @@ if(isset($_POST['btnLogin'])){
 
 }
 else {
-    header('location:admin.php');
+    header('location:admins.php');
 }
 
 

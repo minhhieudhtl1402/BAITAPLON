@@ -17,11 +17,7 @@
             <h5 class="text-center text-primary mt-5">Thêm mới Người Dùng</h5>
             <!-- Form thêm Dữ liệu nhân viên -->
             <form action="process_add_admins.php" method="post">
-                <div class="form-group">
-                    <label for="txtid_admin">admin_id</label>
-                    <input type="text" class="form-control" id="txtid_admin" name="txtadmin_id" placeholder="admin_id">
-
-                </div>
+                
                 <div class="form-group">
                     <label for="txtTen">Name</label>
                     <input type="text" class="form-control" id="txtTen" name="txtTen" placeholder="name">
