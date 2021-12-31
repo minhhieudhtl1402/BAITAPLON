@@ -1,15 +1,14 @@
 <?php
 // Xử lý giá trị GỬI TỚI
-if (isset($_POST['txtHo'])) {
-    $ho = $_POST['txtHo'];
+if (!isset($_POST['btnSave'])) {
+    header("location:users.php");
 }
-
+$ho = $_POST['txtHo'];
 $ten = $_POST['txtTen'];
 $email = $_POST['txtEmail'];
 $password = $_POST['txtPassword'];
 $age = $_POST['txtAge'];
 $address = $_POST['txtAddress'];
-
 // Bước 01: Kết nối Database Server
 $conn = mysqli_connect('localhost', 'root', '', 'flickr');
 if (!$conn) {
@@ -28,4 +27,10 @@ if (!$ketqua) {
 
 // Bước 03: Đóng kết nối
 mysqli_close($conn);
+
+
+
 ?>
+
+
+

@@ -1,14 +1,17 @@
 <?php
 // Xử lý giá trị GỬI TỚI
-if (isset($_POST['txtId'])) {
-    $id = $_POST['txtId'];
+if (!isset($_POST['btnSave'])) {
+    header("location:add_users.php");
 }
-$ho = $_POST['txtHo'];
-$ten = $_POST['txtTen'];
-$email = $_POST['txtEmail'];
-$password = $_POST['txtPassword'];
-$age = $_POST['txtAge'];
-$address = $_POST['txtAddress'];
+    $id = $_POST['txtId'];
+    $ho = $_POST['txtHo'];
+    $ten = $_POST['txtTen'];
+    $email = $_POST['txtEmail'];
+    $password = $_POST['txtPassword'];
+    $age = $_POST['txtAge'];
+    $address = $_POST['txtAddress'];
+
+
 
 // Bước 01: Kết nối Database Server
 $conn = mysqli_connect('localhost', 'root', '', 'flickr');
@@ -26,5 +29,5 @@ if (!$ketqua) {
 }
 ;
 // Bước 03: Đóng kết nối
-mysqli_close($conn);
+mysqli_close($conn);  
 ?>

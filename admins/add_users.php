@@ -82,7 +82,7 @@ if (!isset($_SESSION['AdminLogin'])) {
 
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3">Lưu lại</button>
+        <button type="submit" id="btnSave" class="btn btn-primary mt-3">Lưu lại</button>
       </form>
     </div>
   </main>

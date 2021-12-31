@@ -1,17 +1,19 @@
 @media (max-width: 46.1875em)
 {
-    #aa{
+    #changeCover{
         margin-left: 130px;
-        /* align-items: flex-end; */
+
     }
     #showcase-add{
         visibility: hidden;
     }
-    /* #nameuser{
-        margin-left: 10px;
-    } */
 
-
+    #cover{
+        height: 400px;
+    }
+    #change{
+        margin-right:50px;
+    }
 }
 
 @media (max-width: 63.9375em) and (min-width: 46.25em) {
@@ -21,16 +23,5 @@
 
 @media (min-width:64em) {
 
-    #email{
-        
-    }
-    #follow{
-        margin-left: 60px;
-    }
-    #following{
 
-    }
-    #cover-info{
-        height: 200px;
-    }
 }

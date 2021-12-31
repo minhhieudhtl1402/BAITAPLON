@@ -20,7 +20,7 @@ if (!isset($_SESSION['LoginOK'])) {
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/you_responsive.css">
+    <link rel="stylesheet" href="../assets/css/you_responsive.css">
 </head>
 
 <body>
@@ -128,35 +128,50 @@ if (!isset($_SESSION['LoginOK'])) {
 
         </nav>
 
-    </header>
-    <div id="cover" class=" bg-image">
-        <div id="cover-info" class="row text-white">
-            <a class="col-3 col-md-2 img-fluid " href="">
-                <img src="https://ae01.alicdn.com/kf/HTB1meYMNVXXXXbxaXXXq6xXFXXXa/New-Oct-Home-Textile-Stand-by-Me-Doraemon-Anime-Doraemon-40-40CM-Square-Pillow-Case-Covers.jpg_Q90.jpg_.webp" class="img-fluid  rounded-circle border border-white ms-md-5 " alt="">
-            </a>
-            <div class="col-md-1"></div>
-            <div class="col-8 mt-md-3">
-                <div class="row">
-                    <h2 class="col-md-4 col-9" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h2>
-                    <div class="dropdown col-md-8 col-3 ">
-                        <button class=" btn btn-outline-light" id="aa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</button>
-                        <div class="dropdown-menu" aria-labelledby="aa">
-                            <a class="dropdown-item" href="#">Change cover photo</a>
-                            <a class="dropdown-item" href="#">Edit username</a>
-                            <a class="dropdown-item" href="#">Edit real name</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row mt-md-5">
-                    <h5 style="display:inline-block" class="col-md-3 " id="email"><?php echo $_SESSION['LoginOK']; ?></h5>
-                    <h5 style="display:inline-block" class="col-md-3 " id="follow">0 Follower</h5>
-                    <h5 style="display:inline-block" class="col-md-3 " id="following">0 Following</h5>
-                </div>
-
+    </header> 
+    <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center">
+        <div id="cover-info" class="row text-white ">
+            <div class="col-md-5 d-flex justify-content-center align-items-center ">
+                <a class=" img-fluid " href="update_avatar.php">
+                    <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    }
+                    else{
+                        $row=['imageAdd_title'=>'defaultAvatar.webp'];
+                    }
+                    mysqli_close($db);
+                    ?>
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
+                </a>
             </div>
 
+            <div class="col-md-7">
+                <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h1>
+                
+                <h3 id="email "><?php echo $_SESSION['LoginOK']; ?></h3>
+                <h4 id="follow ">Follower:  0</h4>
+                <h4 id="following ">Following:  0</4>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
+                    <div class="dropdown-menu" aria-labelledby="changeCover">
+                        <a class="dropdown-item" href="#">Change cover photo</a>
+                        <a class="dropdown-item" href="#">Edit username</a>
+                        <a class="dropdown-item" href="#">Edit real name</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
+    </div>
     </div>
 
     <div class="container">
@@ -304,7 +319,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             <h4>Your most popular photos will appear here.</h4>
                             <p>Set your photos to public for more faves, comments and views.</p>
                             <p>For even more exposure, add them to Groups</p>
-                            <a class="text-decoration-none" href="" >
+                            <a class="text-decoration-none" href="">
                                 <p>Go to Camera Roll</p>
                             </a>
                         </div>
