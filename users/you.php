@@ -116,7 +116,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </span>
                 </div>
                 <div class="nav-item nav-item-mb">
-                <?php include 'dbConfig.php';
+                    <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
@@ -126,7 +126,7 @@ if (!isset($_SESSION['LoginOK'])) {
                         $row = ['imageAdd_title' => 'defaultAvatar.webp'];
                     }
                     mysqli_close($db);
-                    ?>                
+                    ?>
                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class=" img-user">
                 </div>
                 <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
@@ -219,12 +219,22 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel" aria-labelledby="About-tab">
 
                 <div class="container" style="height: 84;">
-                    <form action="">
+                    <form autocomplete action="process_update_describe.php" method="POST" id="formWriteSomething">
                         <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                            <textarea id="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"></textarea>
+                            <?php include("dbConfig.php");
+                            $email = $_SESSION['LoginOK'];
+                            $query = "SELECT * FROM users WHERE email='$email'";
+                            $result = mysqli_query($db, $query);
+                            if (mysqli_num_rows($result) > 0) {
+                                $row = mysqli_fetch_assoc($result);
+                            }
+                            
+                            mysqli_close($db);
+                            ?>
+                            <textarea id="writeSomething" name="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"><?php echo $row['users_describe']; ?></textarea>
 
                         </div>
-                        <button class="btn btn-outline-info" id="writeLittle">Save</button>
+                        <button class="btn btn-outline-info" id="btnWriteSomething">Save</button>
                     </form>
 
                     <hr>
