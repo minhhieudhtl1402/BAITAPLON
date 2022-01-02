@@ -128,7 +128,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
         </nav>
 
-    </header> 
+    </header>
     <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center">
         <div id="cover-info" class="row text-white ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
@@ -139,9 +139,8 @@ if (!isset($_SESSION['LoginOK'])) {
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
-                    }
-                    else{
-                        $row=['imageAdd_title'=>'defaultAvatar.webp'];
+                    } else {
+                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
                     }
                     mysqli_close($db);
                     ?>
@@ -151,18 +150,18 @@ if (!isset($_SESSION['LoginOK'])) {
 
             <div class="col-md-7">
                 <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h1>
-                
+
                 <h3 id="email "><?php echo $_SESSION['LoginOK']; ?></h3>
-                <h4 id="follow ">Follower:  0</h4>
-                <h4 id="following ">Following:  0</4>
-                <div class="dropdown">
-                    <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
-                    <div class="dropdown-menu" aria-labelledby="changeCover">
-                        <a class="dropdown-item" href="#">Change cover photo</a>
-                        <a class="dropdown-item" href="#">Edit username</a>
-                        <a class="dropdown-item" href="#">Edit real name</a>
+                <h4 id="follow ">Follower: 1</h4>
+                <h4 id="following ">Following: 888</4>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
+                        <div class="dropdown-menu" aria-labelledby="changeCover">
+                            <a class="dropdown-item" href="#">Change cover photo</a>
+                            <a class="dropdown-item" href="#">Edit username</a>
+                            <a class="dropdown-item" href="#">Edit real name</a>
+                        </div>
                     </div>
-                </div>
             </div>
 
 
@@ -407,19 +406,31 @@ if (!isset($_SESSION['LoginOK'])) {
 
 
                     </div>
+
+                    <!--Đoạn này để ảnh mà người dùng đăng lên  -->
+
+                    <div id="luu_anh" class="d-flex flex-wrap">
+                        <?php include 'dbConfig.php';
+                        $email = $_SESSION['LoginOK'];
+                        $query = "SELECT * FROM image_add WHERE user_email='$email' ORDER BY uploaded_on DESC";
+                        $result = mysqli_query($db, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+
+                                <img class="img-thumbnail" src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="">
+                    
+                    <?php
+                            }
+                        }
+                        mysqli_close($db);
+                    ?>
+                    </div>
                 </div>
-                <!--Đoạn này để ảnh mà người dùng đăng lên  -->
-                <div class=""></div>
-                <div id="luu-anh" class="d-flex flex-wrap">
-                    <img class="img-thumbnail" src="https://image.thanhnien.vn/2048/uploaded/anhth/2021_08_15/naraka-bladepoint-dieu-can-biet03_slbk.jpeg" alt="">
-                    <img class="img-thumbnail" src="https://i.pinimg.com/originals/e0/64/7c/e0647c2b22a075f162ac55d75eb21d95.jpg" alt="">
-                    <img class="img-thumbnail" src="https://cdn.bhdw.net/im/viper-ning-naraka-bladepoint-tro-choi-dien-tu-truc-tuyen-hinh-nen-74907_L.jpg" alt="">
-                    <img class="img-thumbnail" src="https://hoanghapc.vn/media/news/2406_naraka-bladepoint-1.jpg" alt="">
-                    <img class="img-thumbnail" src="https://i.pinimg.com/originals/b7/e5/6d/b7e56dfc58e58bb53bd14b8ff6dd794d.jpg" alt="">
-                    <img class="img-thumbnail" src="https://hoanghapc.vn/media/news/2406_naraka-bladepoint-6.jpg" alt="">
-                </div>
-                <!-- Kết thúc -->
             </div>
+            <!-- Kết thúc -->
+
+
 
             <!-- Ket thuc Photostream -->
 
