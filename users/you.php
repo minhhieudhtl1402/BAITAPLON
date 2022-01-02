@@ -3,8 +3,6 @@ if (!isset($_SESSION['LoginOK'])) {
     header("location:login.php");
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +19,8 @@ if (!isset($_SESSION['LoginOK'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/you_responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../assets/js/you1.js"></script>
 </head>
 
 <body>
@@ -116,7 +116,18 @@ if (!isset($_SESSION['LoginOK'])) {
                     </span>
                 </div>
                 <div class="nav-item nav-item-mb">
-                    <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user">
+                <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    } else {
+                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
+                    }
+                    mysqli_close($db);
+                    ?>                
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class=" img-user">
                 </div>
                 <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
                     <span class="material-icons ms-3 mt-2 ">
@@ -208,10 +219,14 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel" aria-labelledby="About-tab">
 
                 <div class="container" style="height: 84;">
-                    <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                        <textarea id="form18" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"></textarea>
+                    <form action="">
+                        <div class="md-form mb-4 pink-textarea active-pink-textarea">
+                            <textarea id="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"></textarea>
 
-                    </div>
+                        </div>
+                        <button class="btn btn-outline-info" id="writeLittle">Save</button>
+                    </form>
+
                     <hr>
                     <div class="showcase ">
                         <div class="row">
@@ -419,12 +434,12 @@ if (!isset($_SESSION['LoginOK'])) {
                         ?>
 
                                 <img class="img-thumbnail" src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="">
-                    
-                    <?php
+
+                        <?php
                             }
                         }
                         mysqli_close($db);
-                    ?>
+                        ?>
                     </div>
                 </div>
             </div>

@@ -118,9 +118,24 @@ if (!isset($_SESSION['LoginOK'])) {
                           </span>
                       </div>
                       <div class="nav-item nav-item-mb">
-                          <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user">
+                      <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    } else {
+                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
+                    }
+                    mysqli_close($db);
+                    ?>  
+            <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class=" img-user">
                       </div>
-                      
+                      <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
+                    <span class="material-icons ms-3 mt-2 ">
+                        logout
+                    </span>
+                </a>
                     </div>
           
                 </nav>
