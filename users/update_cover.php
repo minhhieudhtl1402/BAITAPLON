@@ -15,7 +15,7 @@ if (!isset($_SESSION['LoginOK'])) {
 </head>
 
 <body>
-    <form action="process_update_avatar.php" method="post" enctype="multipart/form-data">
+    <form action="process_update_cover.php" method="post" enctype="multipart/form-data">
         Select Image File to Upload:
         <input type="file" name="file">
         <input type="submit" name="submit" value="Upload">

@@ -140,7 +140,21 @@ if (!isset($_SESSION['LoginOK'])) {
         </nav>
 
     </header>
-    <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center">
+    <?php include 'dbConfig.php';
+    $email = $_SESSION['LoginOK'];
+    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' ORDER BY uploaded_on DESC";
+    $result = mysqli_query($db, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $link = $row['imageAdd_title'];
+    } else {
+        $row = ['imageAdd_title' => 'defaultCover.jpg'];
+        $link = $row['imageAdd_title'];
+    }
+
+    mysqli_close($db);
+    ?>
+    <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center" style="background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">
@@ -168,9 +182,8 @@ if (!isset($_SESSION['LoginOK'])) {
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
                         <div class="dropdown-menu" aria-labelledby="changeCover">
-                            <a class="dropdown-item" href="#">Change cover photo</a>
-                            <a class="dropdown-item" href="#">Edit username</a>
-                            <a class="dropdown-item" href="#">Edit real name</a>
+                            <a class="dropdown-item" href="update_cover.php">Change cover photo</a>
+                            <a class="dropdown-item" href="update_username.php">Edit username</a>                           
                         </div>
                     </div>
             </div>
@@ -228,7 +241,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             if (mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
                             }
-                            
+
                             mysqli_close($db);
                             ?>
                             <textarea id="writeSomething" name="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"><?php echo $row['users_describe']; ?></textarea>
