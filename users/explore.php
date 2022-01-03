@@ -107,7 +107,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </form>
 
                     <div class="nav-item icon-nav nav-item-mb">
-                        <a href="https://www.flickr.com/photos/upload/"><span class="nav-link material-icons ">
+                        <a href="uploadImg.php"><span class="nav-link material-icons ">
                             backup
                             </span></a>
                        
@@ -165,11 +165,22 @@ if (!isset($_SESSION['LoginOK'])) {
                          square
                      </span>
              </div>
+             <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='3' ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    } else {
+                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
+                    }
+                    mysqli_close($db);
+                    ?>
         
          </div>
          <div class="row ">
              <div class="col-md-4 p-1 img flex-sm-wrap">
-                 <img src=".././assets/img/i3.jpg" alt="" class="img-fluid img-item">
+                 <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class="img-fluid img-item">
                  <div class="row">
                  <div class="view row">
                      <div class="img-title col-md-4 text-white ">Image title</div>
