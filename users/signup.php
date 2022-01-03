@@ -33,13 +33,14 @@
         
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <form role="form">
+                            <form action="process_signup.php" method="post">
+                                <form role="form">
                               
                                     <input type="Firstname" class="form-control mb-3" id="InputFristname1"
                                         placeholder="Frist name" name="txtName1" required autofocus />
                                 
                                
-                                    <input type="Lastname" class="form-control mt-2 mb-3" id=InputLastname"
+                                    <input type="Lastname" class="form-control mt-2 mb-3" id="InputLastname"
                                         placeholder="Last name" name="txtName2" required />
                              
                                 
@@ -61,22 +62,23 @@
                                     ?>
                                    
                                
-                                <div class="checkbox text-start mt-2">
+                                   <div class="checkbox text-start mt-2">
                                     <label>
                                         <input type="checkbox" name="" required /> I'm not a robot
                                     </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-2 signBtn" name="btnSignup">
-                                    Sign up
-                                </button>
-                                <div class="data mt-2">
-                                    <p>By signing up, you agree with Flickr's Terms of Services and Privacy Policy.</p>
-                                </div>
-                                <hr>
-                                <p class="loginhere">Already a Flickr member?
-                                    <a href="#" class="loginhere-link">Log in here</a>
-                                </p>
-                            </form>
+                                   </div>
+                                   <button type="submit" class="btn btn-primary mt-2 signBtn" name="btnSignup">
+                                       Sign up
+                                   </button>
+                                   <div class="data mt-2">
+                                       <p>By signing up, you agree with Flickr's Terms of Services and Privacy Policy.</p>
+                                   </div>
+                                   <hr>
+                                   <p class="loginhere">Already a Flickr member?
+                                      <a href="#" class="loginhere-link">Log in here</a>
+                                   </p>
+                               </form>
+                             </form>
                         </div>
                     </div>
                
