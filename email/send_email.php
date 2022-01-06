@@ -49,7 +49,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Flickr-Verify your account';
-    $mail->Body    = 'Chào mừng bạn đến với Flickr.com. Chào mừng bạn đến với Flickr.com. Để sử dụng tài khoản vui lòng nhấp <a href ="http://localhost/BAITAPLON/users/login.php">Đăng nhập</a> để kích hoạt ';
+    $mail->Body    = ' Chào mừng bạn đến với Flickr.com. Để sử dụng tài khoản vui lòng nhấp <a href ="http://localhost/BAITAPLON/users/login.php">Đăng nhập</a> để kích hoạt ';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     if ($mail->send()){

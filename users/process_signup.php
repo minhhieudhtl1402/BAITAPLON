@@ -7,7 +7,7 @@ session_start();
    $pass=$_POST['txtPass'];
 if(isset($_POST['btnSignup'])){
     if (isset($_POST['txtEmail']) && $_POST['txtEmail'] != ''){
-        include "send_email.php";
+        include "../email/send_email.php";
         if(SendEmailForAccountActive($_POST['txtEmail'])){
             
         //    echo "Tài khoản của bạn đã đăng ký thành công. Vui lòng kiểm tra Email";
