@@ -6,16 +6,20 @@ if (!isset($_SESSION['LoginOK'])) {
 
 //Include the database configuration file
 include 'dbConfig.php';
+
+
 $statusMsg = '';
 
 // File upload path
 $targetDir = "../assets/img/userImg/";
 $fileName = basename($_FILES["file"]["name"]);
+
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
 
 if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
+    
     // Allow certain file formats
     $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf','webp');
     if (in_array($fileType, $allowTypes)) {
@@ -23,11 +27,12 @@ if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
             // Insert image file name into database
             $email=$_SESSION['LoginOK'];
-            $sql = "INSERT into image_add (imageAdd_link,user_email,categories_id,uploaded_on) VALUES ('".$fileName."','$email','2', NOW())";
+           $titleName=$_POST['title'];
+            $sql = "INSERT into image_add (imageAdd_title,imageAdd_link,user_email,categories_id,uploaded_on) VALUES ('$titleName','".$fileName."','$email','3', NOW())";
             $insert=mysqli_query($db,$sql);
             if ($insert) {
                 $statusMsg = "The file " . $fileName . " has been uploaded successfully.";
-                header("location: you.php");
+                header("location:explore.php");
             } else {
                 $statusMsg = "File upload failed, please try again.";
             }
@@ -40,6 +45,7 @@ if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
 } else {
     $statusMsg = 'Please select a file to upload.';
 }
+
 
 // Display status message
 

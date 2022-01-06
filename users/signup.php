@@ -12,6 +12,8 @@
     <link rel="stylesheet" href=".././assets/css/singup.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href=".././assets/css/reponsiveSignUp.css">
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+     <script src="../assets/js/script.js"></script>
 </head>
 
 <body>
@@ -46,19 +48,22 @@
                                     <input type="Yourage" class="form-control mt-2 mb-3" id="InputYourage"
                                         placeholder="Your age" name="txtAge" required />
                                
-                              
+                                    <div class="form-group">
                                     <input type="email" class="form-control mt-2 mb-3" id="InputEmail"
-                                        placeholder="Email" name="txtEmail" required />
-                                
+                                        placeholder="Email" name="txtEmail" required ="" />
+                                        <small id="emailhelp" ></small>
+                                        
+
+                                       
+                                    </div>
+                                   
+
                               
                                     <input type="password" class="form-control mt-3" id="InputPassword"
                                         placeholder="Password"  name="txtPass" required />
-                                    <?php
-                                        if(isset($_GET['error'])){
-                                            echo "<p style='color:red'> {$_GET['error']} </p>";
-                                        }
-
-                                    ?>
+                                    
+                                       
+                                   
                                    
                                
                                 <div class="checkbox text-start mt-2">
@@ -117,3 +122,4 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 </body>
+</html>

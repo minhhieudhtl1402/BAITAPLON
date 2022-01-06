@@ -23,7 +23,7 @@ if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
             // Insert image file name into database
             $email=$_SESSION['LoginOK'];
-            $sql = "INSERT into image_add (imageAdd_title,user_email,categories_id,uploaded_on) VALUES ('".$fileName."','$email','1', NOW())";
+            $sql = "INSERT into image_add (imageAdd_link,user_email,categories_id,uploaded_on) VALUES ('".$fileName."','$email','1', NOW())";
             $insert=mysqli_query($db,$sql);
             if ($insert) {
                 $statusMsg = "The file " . $fileName . " has been uploaded successfully.";

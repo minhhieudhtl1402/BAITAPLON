@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/icon/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -18,15 +18,15 @@
         <nav class="navbar navbar-expand-lg navbar-dark header-row bg-white mt-0">
             <a class="navbar-brand nav-link " href="">
                 <div class="logo">
-                    <img src="./assets/img/logo2.png" alt="" class="img-logo2 " style="width: 80px;">
+                    <img src=".././assets/img/logo2.png" alt="" class="img-logo2 " style="width: 80px;">
                   
                 </div>
             </a>
-            <a href="" class="nav-link ">
+            <a href="" class="nav-item ">
                 <h2 class= "mt-3 "style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none">Your Photostream</a></h2>
             </a>
             <a href="" class="nav-item ">
-                <h2 class= "mt-3 ms-4 "style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none">Create</a></h2>
+                <h2 class= "mt-3  ms-3"style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none ">Create</a></h2>
             </a>
            
             <a href="" class="nav-item  navb ">
@@ -36,7 +36,7 @@
                 <p class= "mt-4 ms-3 text-end "style="font-size: 15px; font-weight: 200; "><a href="" class="text-secondary text-decoration-none">New Here?</a></p>
             </a>
             <div class="img">
-                <img src="./assets/img/avtimg.jfif" alt="" class=" img-user1 ">
+                <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user1 ">
             </div>
         
 
@@ -48,23 +48,19 @@
     
     <div class="container-fluid   main-up">
         
-        <div class="row ">
+        <div class="row " >
             <div class="col-md-4"></div>
            
-            <div class="col-md-4 ">
-                <form role="form ">
+            <div class="col-md-4 " >
+                <form role="form " style="margin-top: 250px;" action="process_update_post.php" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label fs-3 text-white">Choose Image</label>
+                        <input name="file" class="form-control" type="file"  multiple>
+                      </div>
                     
-                    <div class="uploadImg form-group text-white text-center ">
-                         
-                        <label for="exampleInputFile">
-                            Chọn ảnh
-                        </label>
-                        <input type="file" class="form-control-file "  id="exampleInputFile"  drop-placeholder="cchonj anh"/>
-                        
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary ms-3">
-                        Submit
+                      <input class="form-control form-control-lg" type="text" placeholder="Title Image" aria-label=".form-control-lg example" name="title">
+                    <button type="submit" class="btn btn-primary  mt-3" name="submit">
+                        upload
                     </button>
                 </form>
             </div>

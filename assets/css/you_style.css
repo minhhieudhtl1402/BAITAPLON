@@ -227,3 +227,19 @@ body .tabUI {
       color:#bdbdbd;
       border:none;
   }
+
+
+  /* //lưu ảnh photostream */
+
+  .img{
+      position: relative;
+  }
+
+.img-title{
+    margin-bottom: 50px;
+    font-size: 20px;
+    position:absolute;
+   
+    
+
+}
