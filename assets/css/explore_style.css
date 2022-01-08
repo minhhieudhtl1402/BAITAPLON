@@ -170,7 +170,7 @@ body .tabUI {
      
       
   }
-.img:hover .view{
+ .img:hover .view{
     display: flex;
 }
  
@@ -187,15 +187,15 @@ body .tabUI {
       display: none;
       
 
-  }
+  } 
   .img-title{
-      margin-bottom: -24px;
-      font-size: 15px;
-      float:left;
-      width: 40%;
+      
+      font-size: 20px;
+     
+      
 
   }
-  .img-view{
+  /* .img-view{
      
       display: flex;
       float: left;
@@ -203,7 +203,7 @@ body .tabUI {
       
      
 
-  }
+  } */
   .icon-plus{
       color: transparent;
   }

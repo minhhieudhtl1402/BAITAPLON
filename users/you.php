@@ -125,11 +125,11 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
                     } else {
-                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
+                        $row = ['imageAdd_link' => 'defaultAvatar.webp'];
                     }
                     mysqli_close($db);
                     ?>
-                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class=" img-user">
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-user">
                 </div>
                 <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
                     <span class="material-icons ms-3 mt-2 ">
@@ -148,18 +148,15 @@ if (!isset($_SESSION['LoginOK'])) {
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $link = $row['imageAdd_title'];
+        $link = $row['imageAdd_link'];
     } else {
-        $row = ['imageAdd_title' => 'defaultCover.jpg'];
-        $link = $row['imageAdd_title'];
+        $row = ['imageAdd_link' => 'defaultCover.jpg'];
+        $link = $row['imageAdd_link'];
     }
 
     mysqli_close($db);
     ?>
-    <div style="z-index: 1; position:fixed;top:50px;right:390px; background-color:#E9897E;" id="SEARCH_RESULT" class="border border-light">
- 
-    </div>
-    <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center" style="background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
+    <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style="background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">
@@ -170,11 +167,11 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
                     } else {
-                        $row = ['imageAdd_title' => 'defaultAvatar.webp'];
+                        $row = ['imageAdd_link' => 'defaultAvatar.webp'];
                     }
                     mysqli_close($db);
                     ?>
-                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
                 </a>
             </div>
 
@@ -188,7 +185,7 @@ if (!isset($_SESSION['LoginOK'])) {
                         <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
                         <div class="dropdown-menu" aria-labelledby="changeCover">
                             <a class="dropdown-item" href="update_cover.php">Change cover photo</a>
-                            <a class="dropdown-item" href="update_username.php">Edit username</a>                           
+                            <a class="dropdown-item" href="update_username.php">Edit username</a>
                         </div>
                     </div>
             </div>
@@ -448,7 +445,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
                     <!--Đoạn này để ảnh mà người dùng đăng lên  -->
 
-                    <div id="luu_anh" class="d-flex flex-wrap">
+                    <div  class="d-flex flex-wrap">
                         <?php include 'dbConfig.php';
                         $email = $_SESSION['LoginOK'];
                         $query = "SELECT * FROM image_add WHERE user_email='$email' ORDER BY uploaded_on DESC";
@@ -457,8 +454,16 @@ if (!isset($_SESSION['LoginOK'])) {
                             while ($row = mysqli_fetch_assoc($result)) {
                         ?>
 
-                                <img class="img-thumbnail" src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="">
+                                <div class=" p-1  col-md-4 ">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height:" class="img-fluid img img-item">
+                                    <!-- <div class="row view">
+                                        
+                                            <div  class="img-title col-md-4  fs-3"><?php echo $row['imageAdd_title']; ?></div>
 
+                                       
+                                    </div> -->
+
+                                </div>
                         <?php
                             }
                         }
