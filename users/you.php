@@ -101,8 +101,10 @@ if (!isset($_SESSION['LoginOK'])) {
                         </span>
 
                         <input class="form-control me-2 btn-group input-search" id="input_search" type="search" placeholder="Photos,people or groups" aria-label="Search">
+                        
                     </div>
                 </form>
+                
 
                 <div class="nav-item icon-nav nav-item-mb">
                     <a href="https://www.flickr.com/photos/upload/"><span class="nav-link material-icons ">
@@ -154,6 +156,9 @@ if (!isset($_SESSION['LoginOK'])) {
 
     mysqli_close($db);
     ?>
+    <div style="z-index: 1; position:fixed;top:50px;right:390px; background-color:#E9897E;" id="SEARCH_RESULT" class="border border-light">
+ 
+    </div>
     <div id="cover" class=" bg-image d-flex flex-column  align-items-center justify-content-center" style="background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
@@ -187,12 +192,6 @@ if (!isset($_SESSION['LoginOK'])) {
                         </div>
                     </div>
             </div>
-
-
-
-
-
-
         </div>
     </div>
     </div>
@@ -231,7 +230,8 @@ if (!isset($_SESSION['LoginOK'])) {
             <!-- Bat dau  About -->
             <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel" aria-labelledby="About-tab">
 
-                <div class="container" style="height: 84;">
+                
+            <div class="container" style="height: 84;">
                     <form autocomplete action="process_update_describe.php" method="POST" id="formWriteSomething">
                         <div class="md-form mb-4 pink-textarea active-pink-textarea">
                             <?php include("dbConfig.php");
@@ -249,8 +249,9 @@ if (!isset($_SESSION['LoginOK'])) {
                         </div>
                         <button class="btn btn-outline-info" id="btnWriteSomething">Save</button>
                     </form>
-
+                        
                     <hr>
+                    
                     <div class="showcase ">
                         <div class="row">
                             <div class="col-md-1  ">
@@ -466,6 +467,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </div>
                 </div>
             </div>
+            
             <!-- Kết thúc -->
 
 
@@ -482,7 +484,6 @@ if (!isset($_SESSION['LoginOK'])) {
                     <div class="d-flex justify-content-center">
                         <button type="button" class="btn btn-primary">Go to Camera Roll</button>
                     </div>
-
                 </div>
                 <div id="album-photo" class="row d-flex me-1 ms-1 mt-3 ">
 
@@ -762,7 +763,28 @@ if (!isset($_SESSION['LoginOK'])) {
         </nav>
     </div>
 
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#input_search").keyup(function(){
+                var input=$(this).val();
+                //alert(input);
+                if(input !=""){
+                    $.ajax({
+                        url:"liveSearch.php",
+                        method:"POST",
+                        data:{input:input},
+                        success:function(data){
+                            $("#SEARCH_RESULT").html(data);
+                            $("#SEARCH_RESULT").css("display","block");
+                        }
+                    });
+                }
+                else{
+                    $("#SEARCH_RESULT").css("display","none");
+                }
+            });
+        });
+    </script>
     <script src="assets/js/you.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
