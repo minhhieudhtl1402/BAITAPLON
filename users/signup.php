@@ -62,8 +62,12 @@
                               
                                     <input type="password" class="form-control mt-3" id="InputPassword"
                                         placeholder="Password"  name="txtPass" required />
-                                    
-                                       
+                                    <?php
+                                        if (isset($_GET['error'])) {
+                                echo "<p style='color:red'> {$_GET['error']} </p>";
+                            }
+
+                            ?>
                                    
                                    
                                
@@ -80,7 +84,7 @@
                                    </div>
                                    <hr>
                                    <p class="loginhere">Already a Flickr member?
-                                      <a href="#" class="loginhere-link">Log in here</a>
+                                      <a href="login.php" class="loginhere-link">Log in here</a>
                                    </p>
                                </form>
                              </form>

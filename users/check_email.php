@@ -14,8 +14,8 @@
 <body>
 <div class="container-fluid">
     <div id="background" class="container-fluid bg-image">
-    <div class ="text-center icon" style="color:green;font-size:100px;margin-top: 250px;"><i class="bi bi-check-circle"></i></div>
-      <h1 class="text-center  mb-5"style="font- size: 20px;">Tài khoản của bạn đã đăng ký thành công. Vui lòng kiểm tra Email </h1>
+    <div class ="text-center icon" style="color:green;font-size:100px;margin-top: 200px;"><i class="bi bi-check-circle"></i></div>
+      <h2 class="text-center  mb-5"style="font- size: 20px;">Tài khoản của bạn đã đăng ký thành công. Vui lòng kiểm tra Email </h2>
 
 </div>    
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

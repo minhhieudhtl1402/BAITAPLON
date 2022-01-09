@@ -21,8 +21,8 @@ if(isset($_POST['btnSignup'])){
     
     $result = mysqli_query($conn,$sql1);
     if(mysqli_num_rows($result) > 0){
-        // $error = "Email is existed";
-        // header("location: signup.php?error=$error"); 
+        $error = "Email is existed";
+        header("location: signup.php?error=$error"); 
         echo('<label class="text-danger" > <span class="glyphicon glyphicon-remove"></span> uhgehgo</label>');
         
     }else{

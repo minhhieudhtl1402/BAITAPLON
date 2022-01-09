@@ -583,14 +583,6 @@ if (!isset($_SESSION['LoginOK'])) {
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
         </nav>
     </div>
 

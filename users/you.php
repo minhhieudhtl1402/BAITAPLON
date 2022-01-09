@@ -154,7 +154,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
     mysqli_close($db);
     ?>
-    <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style="background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
+    <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">

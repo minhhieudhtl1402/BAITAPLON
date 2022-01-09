@@ -60,7 +60,7 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="col-md-4 " >
                 <form role="form " style="margin-top: 250px;" action="process_update_cover.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label fs-3 text-white">Choose Image</label>
+                        <label for="formFileMultiple" class="form-label fs-3 text-white">Choose Cover Image</label>
                         <input name="file" class="form-control" type="file"  multiple>
                       </div>
                     
