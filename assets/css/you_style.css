@@ -152,6 +152,7 @@ body .tabUI {
     height: 250px;
     background-color: aqua;
     background-image: url("../img/defaultCover.jpg");
+    top:0;
 }
 
   .tab-Content {
@@ -239,7 +240,8 @@ body .tabUI {
     margin-bottom: 50px;
     font-size: 20px;
     position:absolute;
-   
-    
-
+}
+#SEARCH_RESULT{
+    z-index: 1;
+    position:absolute;
 }
