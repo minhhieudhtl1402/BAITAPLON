@@ -137,78 +137,6 @@ if (!isset($_SESSION['LoginOK'])) {
         </nav>
 
     </header>
-<<<<<<< HEAD
-<div>
-    <ul class="nav nav-tabs tab_Content container  tabUI " id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link  active " id="explore-tab" data-bs-toggle="tab" data-bs-target="#explore" type="button" role="tab" aria-controls="explore" aria-selected="true">Explore</button>
-        </li>
-        <li class="nav-item " role="presentation">
-          <button class="nav-link   " id="trending-tab  " data-bs-toggle="tab" data-bs-target="#trending" type="button" role="tab" aria-controls="trending" aria-selected="false">Trending</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link " id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab" aria-controls="events" aria-selected="false">Events</button>
-        </li>
-        
-     </ul>
-     <form action="">
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
-     </form>
-      
-     
-<div class="tab-content">
-    <div class="container-fluid bg-light tab-pane p-0 pt-3 show active  " id="explore" role="tabpanel" aria-labelledby="explore-tab"> 
-        <div class="container ">
-        <div class="row mt-5 ">
-             <div class="col-md-2 p-0">
-                 <p style="font-size: 25px;">Explore</p>
-                 
-             </div>
-             <div class="col-md-2"></div>
-             <div class="col-md-3"></div>
-             <div class="col-md-2"></div>
-             
-             <div class="col-md-3 share icon-mb">
-                 <span class=" me-1 mt-2">Share</span>
-                 <span class="material-icons text-secondary">
-                     reply
-                     </span>
-                 <span class="material-icons text-primary">
-                     view_quilt
-                     </span>
-                     <span class="material-icons text-secondary ">
-                         square
-                     </span>
-             </div>
-        
-         </div>
-         <div class="row ">
-             <div class="col-md-4 p-1 img flex-sm-wrap">
-                 <img src=".././assets/img/i3.jpg" alt="" class="img-fluid img-item">
-                 <div class="row">
-                 <div class="view row">
-                     <div class="img-title col-md-4 text-white ">Image title</div>
-                     <div class="col-md-8 p-0 img-view">
-                     <span class="material-icons  text-white  me-0" style="font-size: 20px;">
-                         star_border   
-                     </span>
-                    <span class="text-white fs-15  me-3 ms-1" >7.5k</span>
-                     <span class="ti-comment text-white  mt-1" style="font-size: 15px;">
-                              
-                     </span>
-                     <span class="text-white fs-15  me-3 ms-1" >126</span>
-                     <span class="material-icons-outlined  text-white " style="font-size: 20px;">
-                         add_box        
-                      </span>
-=======
     <div>
         <ul class="nav nav-tabs tab_Content container  tabUI " id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -267,7 +195,6 @@ if (!isset($_SESSION['LoginOK'])) {
                             <div class="img-title col-md-4 text-white mb-2 fs-3"><?php echo $row['imageAdd_title']; ?></div>
                            
                         </div>
->>>>>>> cc676fdb3d2b05e1401b15ebe38951c6babc33da
                     </div>
 
                 </div>

@@ -1,3 +1,8 @@
+<?php session_start();
+if (!isset($_SESSION['LoginOK'])) {
+    header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +41,18 @@
                 <p class= "mt-4 ms-3 text-end "style="font-size: 15px; font-weight: 200; "><a href="" class="text-secondary text-decoration-none">New Here?</a></p>
             </a>
             <div class="img">
-                <img src=".././assets/img/avtimg.jfif" alt="" class=" img-user1 ">
+            <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    } else {
+                        $row = ['imageAdd_link' => 'defaultAvatar.webp'];
+                    }
+                    mysqli_close($db);
+                    ?>
+                <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-user1 ">
             </div>
         
 

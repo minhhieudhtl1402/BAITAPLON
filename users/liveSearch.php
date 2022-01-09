@@ -15,7 +15,7 @@ if (isset($_POST['input'])) {
 
             $query1 = "SELECT *
                             from image_add
-                            where user_email='aa@gmail.com' and categories_id='2'
+                            where user_email='$email' and categories_id='2'
                             ORDER BY uploaded_on DESC
                             LIMIT 1;";
             $result1 = mysqli_query($db, $query1);

@@ -780,7 +780,7 @@ if (!isset($_SESSION['LoginOK'])) {
                         data:{input:input},
                         success:function(data){
                             $("#SEARCH_RESULT").html(data);
-                            $("#SEARCH_RESULT").css("display","block");
+                            $("#SEARCH_RESULT").css("display","blosck");
                         }
                     });
                 }

@@ -27,7 +27,7 @@ if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
             $insert=mysqli_query($db,$sql);
             if ($insert) {
                 $statusMsg = "The file " . $fileName . " has been uploaded successfully.";
-                header("location: you.php");
+                header("location:you.php");
             } else {
                 $statusMsg = "File upload failed, please try again.";
             }
