@@ -132,7 +132,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     }
                     mysqli_close($db);
                     ?>  
-            <img src="../assets/img/userImg/<?php echo $row['imageAdd_title']; ?>" alt="" class=" img-user">
+            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-user">
                 </div>
                 <a class="nav-item nav-item-mb " name='btnlogout' href="logout.php">
                     <span class="material-icons ms-3 mt-2 ">

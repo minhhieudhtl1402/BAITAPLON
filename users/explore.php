@@ -20,6 +20,10 @@ if (!isset($_SESSION['LoginOK'])) {
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/js/jquery-3.6.0.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+   
 </head>
 
 <body>
@@ -176,41 +180,44 @@ if (!isset($_SESSION['LoginOK'])) {
                                 square
                             </span>
                         </div>
-                       
+
                     </div>
-    <div class=" d-flex flex-wrap ">
-        <?php include 'dbConfig.php';
-        $email = $_SESSION['LoginOK'];
-        $query = "SELECT * FROM image_add where categories_id='3' ORDER BY uploaded_on DESC";
-        $result = mysqli_query($db, $query);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+                   
+                <div class="row  timkiem mb-5"
+                    <div class=" d-flex flex-wrap ">
+                        <?php include 'dbConfig.php';
+                        $email = $_SESSION['LoginOK'];
+                        $query = "SELECT * FROM image_add where categories_id='3' ORDER BY uploaded_on DESC";
+                        $result = mysqli_query($db, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
 
 
-                <div class=" p-1 img col-md-4 " >
-                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class="img-fluid img-item">
-                    <div class="row">
-                        <div class="view row">
-                            <div class="img-title col-md-4 text-white mb-2 fs-3"><?php echo $row['imageAdd_title']; ?></div>
-                           
-                        </div>
+                                <div class=" p-1 img col-md-4 ">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class="img-fluid img-item">
+                                    <div class="row">
+                                        <div class="view row">
+                                        <div class="img-title col-md-4 p-1  text-center text-white mb-2 fs-3" style="background-color: rgba(0, 0, 0, 0.4);"><?php echo $row['imageAdd_title']; ?></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                        <?php
+
+                            }
+                        }
+                        mysqli_close($db);
+                        ?>
                     </div>
-
                 </div>
-
-
-
-        <?php
-
-            }
-        }
-        mysqli_close($db);
-        ?>
-    </div>
-                </div>
-
             </div>
+
+           
             <div class="container-fluid bg-light tab-pane p-0 pt-3  " id="trending" role="tabpanel" aria-labelledby="trending-tab">
 
                 <div class="container">
@@ -524,8 +531,8 @@ if (!isset($_SESSION['LoginOK'])) {
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class=" cn-footer container-fluid bg-black p-0">
 
         <nav class="navbar  header-row bg-dark ">
@@ -587,8 +594,7 @@ if (!isset($_SESSION['LoginOK'])) {
     </div>
 
 
-
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
