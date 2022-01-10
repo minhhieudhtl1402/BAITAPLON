@@ -149,7 +149,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
     mysqli_close($db);
     ?>
-    <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;" >
+    <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;">
     </div>
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
@@ -166,16 +166,38 @@ if (!isset($_SESSION['LoginOK'])) {
                     }
                     mysqli_close($db);
                     ?>
-                    <img  src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
                 </a>
             </div>
 
-            <div class="col-md-7 p-3 " >
+            <div class="col-md-7 p-3 ">
                 <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h1>
 
                 <h3 id="email "><?php echo $_SESSION['LoginOK']; ?></h3>
-                <h4 id="follow ">Follower: 1</h4>
-                <h4 id="following ">Following: 888</4>
+                <?php
+                    
+                       include 'dbConfig.php';
+
+                        $id=$_SESSION['id'];
+                       $query="SELECT COUNT(*) as SOLUONG FROM follow WHERE users_id='$id' ";
+                       $result=mysqli_query($db,$query);
+                       if(mysqli_num_rows($result)>0){
+                           $row=mysqli_fetch_assoc($result);
+                       }
+                       $following=$row['SOLUONG'];
+
+                       $query="SELECT COUNT(*) as SOLUONG FROM follow WHERE following_id='$id' ";
+                       $result=mysqli_query($db,$query);
+                       if(mysqli_num_rows($result)>0){
+                           $row=mysqli_fetch_assoc($result);
+                       }
+                       $follower=$row['SOLUONG'];
+
+            
+
+                ?>
+                <h4 id="follow ">Follower:<?php echo $follower; ?></h4>
+                <h4 id="following ">Following:<?php echo $following; ?></4>
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
                         <div class="dropdown-menu" aria-labelledby="changeCover">

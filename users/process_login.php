@@ -19,7 +19,7 @@ if(isset($_POST['btnLogin'])){
         $row = mysqli_fetch_assoc($result);
        $pass_hash = $rs['password'];
         if(password_verify($pass,$pass_hash)){
-          
+        $_SESSION['id']=$rs['users_id'];
         $_SESSION['LoginOK'] = $email;
          $_SESSION['nameuser']=$rs['first_name'].' '.$rs['last_name'];
          $_SESSION['age']= $rs['age'];
