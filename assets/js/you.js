@@ -2,7 +2,7 @@ let inputHeader =document.getElementById('input_search');
 inputHeader.addEventListener('mouseover',keo_dai);
 function keo_dai()
 {
-    inputHeader.style.width="400px";
+    inputHeader.style.width="350px";
     inputHeader.style.transitionTimingFunction="linear";
     inputHeader.style.transitionDuration="2s";
 }

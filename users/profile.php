@@ -3,6 +3,29 @@ if (!isset($_SESSION['LoginOK'])) {
     header("location:login.php");
 }
 ?>
+<?php
+
+
+$id = $_GET['id'];
+include 'dbConfig.php';
+
+$query = "SELECT * FROM users WHERE  users_id ='$id'";
+$result = mysqli_query($db, $query);
+$rs = mysqli_fetch_array($result);
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['Name'] = $rs['first_name'] . ' ' . $rs['last_name'];
+    $_SESSION['mail'] = $rs['email'];
+    $email = $_SESSION['mail'];
+}
+mysqli_close($db);
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,14 +135,17 @@ if (!isset($_SESSION['LoginOK'])) {
                 </div>
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
-                    $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
+                        $link = $row['imageAdd_link'];
                     } else {
-                        $row = ['imageAdd_link' => 'defaultAvatar.webp'];
+                        $row = ['imageAdd_link' => 'defaultCover.jpg'];
+                        $link = $row['imageAdd_link'];
                     }
+
                     mysqli_close($db);
                     ?>
                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-user">
@@ -135,53 +161,41 @@ if (!isset($_SESSION['LoginOK'])) {
         </nav>
 
     </header>
-    <?php include 'dbConfig.php';
-    $email = $_SESSION['LoginOK'];
-    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' ORDER BY uploaded_on DESC";
-    $result = mysqli_query($db, $query);
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $link = $row['imageAdd_link'];
-    } else {
-        $row = ['imageAdd_link' => 'defaultCover.jpg'];
-        $link = $row['imageAdd_link'];
-    }
 
-    mysqli_close($db);
-    ?>
-    <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;" >
+    <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;">
     </div>
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">
                     <?php include 'dbConfig.php';
-                    $email = $_SESSION['LoginOK'];
+
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
+                        $link = $row['imageAdd_link'];
                     } else {
-                        $row = ['imageAdd_link' => 'defaultAvatar.webp'];
+                        $row = ['imageAdd_link' => 'defaultCover.jpg'];
+                        $link = $row['imageAdd_link'];
                     }
+
                     mysqli_close($db);
                     ?>
-                    <img  src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
+                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
                 </a>
             </div>
 
-            <div class="col-md-7 p-3 " >
-                <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h1>
+            <div class="col-md-7 p-3 ">
 
-                <h3 id="email "><?php echo $_SESSION['LoginOK']; ?></h3>
+                <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['Name'] ?></h1>
+
+                <h3 id="email "><?php echo $_SESSION['mail']; ?></h3>
                 <h4 id="follow ">Follower: 1</h4>
                 <h4 id="following ">Following: 888</4>
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting</button>
-                        <div class="dropdown-menu" aria-labelledby="changeCover">
-                            <a class="dropdown-item" href="update_cover.php">Change cover photo</a>
-                            <a class="dropdown-item" href="update_username.php">Edit username</a>
-                        </div>
+                        <button class="btn btn-outline-light btn-lg " id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Follow</button>
+
                     </div>
             </div>
         </div>
@@ -228,7 +242,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     <form autocomplete action="process_update_describe.php" method="POST" id="formWriteSomething">
                         <div class="md-form mb-4 pink-textarea active-pink-textarea">
                             <?php include("dbConfig.php");
-                            $email = $_SESSION['LoginOK'];
+
                             $query = "SELECT * FROM users WHERE email='$email'";
                             $result = mysqli_query($db, $query);
                             if (mysqli_num_rows($result) > 0) {
@@ -289,7 +303,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             </div>
                             <div class="col-md-2">
                                 <p>
-                                    <?php echo  $_SESSION['registation_date'] ?></p>
+                                    <?php echo  $row['registation_date'] ?></p>
                             </div>
 
                         </div>
@@ -301,7 +315,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             <div class="col-md-2">
                                 <a class="text-decoration-none" href="">
                                     <p>
-                                        <?php echo $_SESSION['LoginOK'] ?></p>
+                                        <?php echo $_SESSION['mail'] ?></p>
                                 </a>
 
                             </div>
@@ -443,20 +457,23 @@ if (!isset($_SESSION['LoginOK'])) {
 
                     <div class="d-flex flex-wrap">
                         <?php include 'dbConfig.php';
-                        $email = $_SESSION['LoginOK'];
-                        $query = "SELECT * FROM image_add WHERE user_email='$email' ORDER BY uploaded_on DESC";
+
+                        $query = "SELECT * FROM image_add WHERE user_email='$email' ";
                         $result = mysqli_query($db, $query);
+                        $rs = mysqli_fetch_array($result);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                
                         ?>
 
-                                <div class=" p-1  col-md-4 ">
-                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
-                                    <!-- <div class="row view">
-                                        
-                                            <div  class="img-title col-md-4  fs-3"><?php echo $row['imageAdd_title']; ?></div>
+                                <div class=" p-1 img col-md-4 ">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" style=" witdh: 100% ; height: 250px;" alt="" class="img-fluid img-item">
+                                    <!-- <div class="row">
+                                        <div class=" ">
+                                            <div class="text-white"></div>
 
-                                       
+
+                                        </div>
                                     </div> -->
 
                                 </div>

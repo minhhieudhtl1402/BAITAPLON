@@ -64,9 +64,9 @@ if (!isset($_SESSION['LoginOK'])) {
                             <a href="explore.php " class="text-white ms-3" style="text-decoration: none;">Explores</a>
                         </a>
                         <ul class=" dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="explore.html">Recent Photos</a></li>
-                            <li><a class="dropdown-item" href="explore.html">Trending</a></li>
-                            <li><a class="dropdown-item" href="explore.html">Events</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Recent Photos</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Trending</a></li>
+                            <li><a class="dropdown-item" href="explore.php">Events</a></li>
                             <li><a class="dropdown-item" href="https://www.flickr.com/commons">The Commons</a></li>
                             <li><a class="dropdown-item" href="https://www.flickr.com/photos/flickr/galleries">Flickr
                                     Galleries</a></li>
@@ -410,7 +410,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
 
 
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

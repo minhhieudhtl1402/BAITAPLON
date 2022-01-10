@@ -167,51 +167,33 @@ body .tabUI {
   .img-item{
       height: 270px;
       width: 100%;
-     
+    
       
   }
- .img:hover .view{
-    display: flex;
+  .title {
+    position: absolute;
+    top: 80%;
+    font-size: 20px; 
+     color: transparent;
+     width: 40%;
+    
+     
+  }
+  .title:hover {
+      display:block;
+    background-color: rgba(0,0,0,0.4); 
+    color: #fff
 }
- 
-.view{
-      position: absolute;
-      font-size: 12px;
-      width: 100%;
-      bottom: 10px;
-      display: flex;
-      
-      margin-left:24px;
-   
-        background-color: rgba(0,0,0,0.4);
-      display: none;
-      
-
-  } 
-  .img-title{
-      
-      font-size: 20px;
-      
-     
-      
-
-  }
-  /* .img-view{
-     
-      display: flex;
-      float: left;
-      width: 60%;
-      
-     
-
-  } */
+  
+  
+  
   .icon-plus{
       color: transparent;
   }
   .icon{
       font-size: 12px;
   }
-  .view.material-icons{
+  .material-icons{
       font-size: 15px;
   }
   .fs-15{

@@ -6,7 +6,7 @@ if (!isset($_SESSION['AdminLogin'])) {
 ?>  
 <?php
 //admin.php truyền dl sang
-//deleteUsers.php nhận dữ liệu từ admin.php gửi sang
+
 $ma_user = $_GET['id'];
 //b1:kết nối database server
 $conn = mysqli_connect('localhost', 'root', '', 'flickr');
