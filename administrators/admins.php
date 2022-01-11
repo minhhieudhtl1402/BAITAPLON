@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['AdministratorLogin'])) {
-  header("location:loginAdministrator.php");
+  header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -102,7 +102,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
               <tr>
                 <th scope="row"><?php echo $row['admin_id']; ?></th>
                 <td><?php echo $row['name']; ?></td>
-                <td>********</td>
+                <td><?php echo $row['pass'] ?></td>
                 <td><?php echo $row['administrator_id']; ?></td>
                 <td><a href="update_admins.php?id=<?php echo $row['admin_id'];?>"><i class="bi bi-pencil-square text-black"></i></a></td>
                 <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>

@@ -9,7 +9,8 @@
             die("Kết nối thất bại.Vui lòng kiểm tra lại các thông tin máy chủ");
           }
           //b2:thực hiện truy vấn
-          $sql = "INSERT INTO admins (name,pass) VALUES ('$name','$password')";
+          $pass_hash= password_hash($password ,PASSWORD_DEFAULT);
+          $sql = "INSERT INTO admins (name,pass) VALUES ('$name','$pass_hash')";
           $number = mysqli_query($conn, $sql);
           if ($number>0){
               header("location:admins.php");

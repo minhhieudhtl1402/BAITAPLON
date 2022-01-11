@@ -15,7 +15,8 @@ if (!$conn) {
     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
 }
 // Bước 02: Thực hiện truy vấn
-$sql = "INSERT INTO users (first_name,last_name,email,password,age,registation_date,address) VALUES ('$ho','$ten','$email','$password','$age',CURDATE(),'$address')";
+$pass_hash= password_hash($password ,PASSWORD_DEFAULT);
+$sql = "INSERT INTO users (first_name,last_name,email,password,age,registation_date,address) VALUES ('$ho','$ten','$email','$pass_hash','$age',CURDATE(),'$address')";
 // echo $sql;
 $ketqua = mysqli_query($conn, $sql);
 
