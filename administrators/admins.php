@@ -57,7 +57,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
           <a type="button" class="btn btn-lg btn-outline-info">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?>
             <i class="bi bi-emoji-smile"></i></a>
           <!-- <h3 class="me-2">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?></h3>  -->
-          <a type="button" href="adminLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
+          <a type="button" href="administratorLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
         </div>
       </div>
     </nav>
