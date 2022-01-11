@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href=".././assets/css/btl.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href=".././assets/css/reposivebtl.css">
+    <link rel="stylesheet" href=".././assets/css/reponsivebtl.css">
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 

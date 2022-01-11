@@ -95,7 +95,6 @@
     display: flex;
     text-align: center;
     margin-left: -16%;
-}
     }
     .lag{
        
@@ -106,4 +105,15 @@
         margin-left: 100px;
         
     }
+}
+@media (max-width: 63.9375em) and (min-width: 46.25em) {
+    .imgbtn{
+        height: 950px;
+    }
+    .footer{
+        margin-top: -140px;
+        font-size: 20px;
+        margin-left: 36px;
+    }
+}
     

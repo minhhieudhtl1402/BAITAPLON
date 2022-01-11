@@ -11,7 +11,7 @@ if (!isset($_SESSION['LoginOK'])) {
         <nav class="navbar navbar-expand-lg navbar-dark header-row bg-black container">
 
 
-            <a class="navbar-brand nav-link " href="#">
+            <a class="navbar-brand nav-link " href="uploadImg.php">
                 <div class="logo">
                     <img src=".././assets/img/logo3.png" alt="" class="img-logo">
                     <h2>flickr</h2>

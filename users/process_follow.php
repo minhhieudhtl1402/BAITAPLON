@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['LoginOK'])) {
+  header("location:login.php");
+}
 $Users_id= $_POST['txtUsers_id'];
 $Following_id=$_POST['txtFollowing_id'];
 include 'dbConfig.php';

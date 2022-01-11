@@ -20,7 +20,7 @@ if(isset($_POST['btnLogin'])){
         header("location: users.php"); 
     }else{
         $error = "Bạn nhập thông tin chưa chính xác";
-        header("location: loginadmin.php?error=$error"); 
+        header("location: index.php?error=$error"); 
     }
     mysqli_close($conn);
 }

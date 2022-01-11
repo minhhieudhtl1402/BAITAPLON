@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['AdminLogin'])) {
-  header("location:loginadmin.php");
+  header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -16,6 +16,27 @@ if (!isset($_SESSION['AdminLogin'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <title>MANAGE USERS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type ="text/javascript">
+   $(document).ready(function(){
+       $("#timkiem").keyup(function(){
+          var input = $(this).val();
+          if(input != ""){
+            $.ajax({
+               url:"ajaxAdmin.php",
+               method:"POST",
+               data:{input:input},
+               success:function(data){
+                 $("#searchresult").html(data);
+                 $("#searchresult").css("display","block");
+               }
+            });
+          }else{
+            $("#searchresult").css("display","none");
+          }
+       });
+   })
+ </script>
 </head>
 
 <body>
@@ -48,7 +69,10 @@ if (!isset($_SESSION['AdminLogin'])) {
     <div class="container-fluid ">
       <h1 class="text-center mb-5">Quản Lí Người Dùng </h1>
       <a href="add_users.php" class="btn btn-lg btn-outline-info">Thêm User</a>
-
+      <input type="text" class=" form-control" id="timkiem"  placeholder="Search..." >
+      </div>
+      <div id ="searchresult">
+      </div>
       <table class="table bg-light">
         <thead>
           <tr>
@@ -89,7 +113,7 @@ if (!isset($_SESSION['AdminLogin'])) {
                 <td><?php echo $row['registation_date']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td><a href="updateUsers.php?id=<?php echo $row['users_id']; ?>"><i class="bi bi-pencil-square text-black"></i></a></td>
-                <td><a href="deleteUsers.php?id=<?php echo $row['users_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
+                <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="deleteUsers.php?id=<?php echo $row['users_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
               </tr>
           <?php
             }
