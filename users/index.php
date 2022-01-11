@@ -17,7 +17,7 @@ if (!isset($_SESSION['LoginOK'])) {
     <title> Flickr</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/css/main.css">
     <link rel="stylesheet" href=".././assets/css/reponsive.css">
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -144,11 +144,12 @@ if (!isset($_SESSION['LoginOK'])) {
     <div class="main bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 ">
+            <div class="col-md-8 ">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="nav-item dropdown mt-3">
-                                <a class="nav-link ms-3 dropdown-toggle all-act" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link ms-3 dropdown-toggle all-act" href="#" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     All Activity
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -177,10 +178,38 @@ if (!isset($_SESSION['LoginOK'])) {
                             </span>
                         </div>
                     </div>
-                    <div class="row">
-                        <p class="text-center mt-5 text-xl">There is no activity to show right now.</p>
-                        <p class="text-lg-center">Check out the recommended photographers below and start following
-                            people to see their content here.</p>
+                    <div class="row  timkiem mb-5" <div class=" d-flex flex-wrap ">
+                        <?php include 'dbConfig.php';
+                        $email = $_SESSION['LoginOK'];
+                        $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE EXISTS(SELECT following_id FROM follow WHERE users_id= 5 AND users.users_id=follow.following_id) order by RAND();";
+                        $result = mysqli_query($db, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+
+
+                                <div class=" p-1 img col-md-4 ">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style =" width: 100%; height: 200px" class="img-fluid img-item">
+                                    <div class="row nameTitle">
+                                        <div class=" text-white col-md-6" >
+                                         <a href="" class="text-decoration-none "> <?php echo $row['first_name'].' '.$row['last_name']; ?></a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?php echo $row['uploaded_on']; ?>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                        <?php
+
+                            }
+                        }
+                        mysqli_close($db);
+                        ?>
                     </div>
 
                     <div class="row bg-white mt-5">
@@ -188,64 +217,24 @@ if (!isset($_SESSION['LoginOK'])) {
                             <h3 class="header-fl ms-0">
                                 People to follow
                             </h3>
+                           
+                            <hr>
+                            <h5 class="text-center xemthem">
+                                View more
+                            </h5>
                         </div>
+                    </div>
+
+                </div>
+                
 
 
-                            <div class="row">
-                                <?php include 'dbConfig.php';
-                                $id = $_SESSION['id'];
-
-                                $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE    NOT EXISTS(SELECT following_id FROM follow WHERE users_id= '$id' AND users.users_id=follow.following_id) ;
-                                ";
-                                echo "$query";
-                                $result = mysqli_query($db, $query);
-                                $rs = mysqli_fetch_array($result);
-                                if (mysqli_num_rows($result) > 0) {
-
-
-
-
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        if ($row['users_id'] == $id) {
-                                            continue;
-                                        }
-
-
-                                ?>
-                                     <div class="col-md-6 user">
-                                           
-
-
-
-                                        <img src=".././assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-fluid img-us">
-
-
-                                        <a href="#" class="name"> <?php echo $row['first_name'] . ' ' . $row['last_name'] ?>
-
-                                        <p class="name-2 "><?php echo $row['email']; ?></p>
-                                    </div>
-                                        
                             
 
-                                  
-                    
-                    <?php
 
-                                    }
-                                }
+                  
 
-                    ?>
-
-
-                    </div>
-
-                        <hr>
-                        <h5 class="text-center xemthem">
-                            View more
-                        </h5>
-                    </div>
-                </div>
-
+                        
           
    
                 <div class="col-md-4 mt-3 ">
