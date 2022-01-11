@@ -208,10 +208,14 @@ header{
     text-align: center;
   
 }
-.button-style h3{
+/* .button-style h3{
     font-size: 25px;
     font-weight: 700;
     
+} */
+.start{
+    font-size:50px;
+    font-weight: 700;
 }
 
 

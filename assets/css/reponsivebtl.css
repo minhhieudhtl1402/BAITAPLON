@@ -1,27 +1,81 @@
 
 @media (max-width: 46.1875em){ /*moblie*/
     
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        height: 100%;
+    }
+    
+    
     header{
         height: 57px;
+    
     }
-    
-    
-    .btn-signup{
-         display: none;
+    .header-row
+    {
+        background-color:rgba(0,0,0,0.4);
+        width: 100%;
+        
     }
-    
+     ul{
+        margin-top: 40px;
+        display: flex;
+        margin-left: 200px;
+    }
     .login{
     margin-top: -80px;
     margin-left: 40px;
     }
     
-    .img-logo {
-        width: 16px;
-        height: 13px;
+    .btn-signup{
+        background-color: #fff;
+        
+        justify-content: space-around;
+        height: 45px;
         margin-top: 15px;
+        margin-left: 16px;
+        
+        border-radius: 10px;
+        width: 120px;
+    
     }
-    .input-search{
-        display: none;
+    .btn-signup a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link
+    {
+        color:#fff;
+        padding: 0px;
+    }
+    .dropdown:hover .dropdown-menu
+    {
+        display:block;
+        margin-top:0;
+    }
+    .logo{
+        display: flex;
+    
+    }
+     
+    .logo:hover{
+        color: #817e7e;
+    }
+    .logo >h2{
+        font-size: 30px;
+        font-weight: 700;
+        margin-left: 8px;
+        margin-top: -57px;
+        
+    }
+    .img-logo{
+        margin-top: -47px;
+        width: 22px;
+        height: 12px;
     }
     .search{
         margin-top: 4px;
@@ -30,16 +84,15 @@
     }
      .icon-search{
         position: absolute;
-        margin-left: -201px;
-        margin-top: -21px;
+        margin-left: -185px;
+        margin-top: -51px;
         z-index: 1;
         color: white;
         font-size: 20px;
         
     }
     .search input{
-      display: none;
-    }
+     display: none;}
      
     
     .carousel-caption 
@@ -52,16 +105,25 @@
     
     }
     .carousel-caption h1{
-        font-size: 34px;
-        line-height: 57px;
+        font-size: 24px;
+        line-height: 22px;
         text-align: center;
         font-weight: 600;
         display: flex;
         position: absolute;
-        margin: 62px 40px;
+        margin: 0px 55px;
     }
     .caption{
-       display: none;
+        padding: 25px;
+        display: block;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 700;
+        margin: 50px 100px;
+        text-align: center;
+    }
+    .caption >h3{
+        display: none;
     }
     .main{
         width: 100%;
@@ -97,22 +159,21 @@
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 32px;
-        margin-bottom: 50px;
+        margin: -68px;
     }
     .img-form{
-        
-        height: 665px;
+        height: 584px;
+        width: 100%;
     }
     .button-style{
         height: 60px;
         width: 200px;
         margin-top: 36px;
         text-align: center;
-      
+        margin-left: -85px;
     }
-    .button-style h3{
-        font-size: 25px;
+    .start{
+        font-size:50px;
         font-weight: 700;
-        
     }
 }
