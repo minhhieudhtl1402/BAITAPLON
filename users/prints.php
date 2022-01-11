@@ -28,7 +28,7 @@ if (!isset($_SESSION['LoginOK'])) {
         <nav class="navbar navbar-expand-lg navbar-dark header-row bg-black container">
 
 
-            <a class="navbar-brand nav-link " href="">
+            <a class="navbar-brand nav-link " href="index.php">
                 <div class="logo">
                     <img src=".././assets/img/logo3.png" alt="" class="img-logo">
                     <h2>flickr</h2>
@@ -110,7 +110,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 </form>
 
                 <div class="nav-item icon-nav nav-item-mb">
-                    <a href="https://www.flickr.com/photos/upload/"><span class="nav-link material-icons ">
+                    <a href="uploadImg.php"><span class="nav-link material-icons ">
                             backup
                         </span></a>
 
@@ -152,7 +152,10 @@ if (!isset($_SESSION['LoginOK'])) {
                     <h1 class="text-black p-3 " style="font-size: 35px; font-weight: 700;">Prints & Wall Art</h1>
                     <p class=" p-3" style="font-size: 25px; font-weight: 100;">Get stunning wall art and high-quality
                         prints of your photos</p>
-                    <button class="btn btnprint btn-white m-3   "> choose photos</button>
+                        <a href="uploadImg.php">
+                        <button class="btn btnprint btn-white m-3   "> choose photos</button>
+                        </a>
+                    
                 </div>
                 <div class="col-md-6"></div>
             </div>

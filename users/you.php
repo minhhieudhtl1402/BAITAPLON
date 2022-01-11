@@ -100,7 +100,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </div>
                 </form>
                 <div class="nav-item icon-nav nav-item-mb">
-                    <a href="https://www.flickr.com/photos/upload/"><span class="nav-link material-icons ">
+                    <a href="uploadImg.php"><span class="nav-link material-icons ">
                             backup
                         </span></a>
 
@@ -171,7 +171,16 @@ if (!isset($_SESSION['LoginOK'])) {
             </div>
 
             <div class="col-md-7 p-3 ">
-                <h1 class="" style="" id="nameuser"><?php echo  $_SESSION['nameuser'] ?></h1>
+            <?php include 'dbConfig.php';
+                    $email = $_SESSION['LoginOK'];
+                    $query = "SELECT * FROM users WHERE email='$email'";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_assoc($result);
+                    } 
+                    mysqli_close($db);
+                    ?>
+                <h1 class="" style="" id="nameuser"><?php echo $row['first_name'].' '.$row['last_name']; ?></h1>
 
                 <h3 id="email "><?php echo $_SESSION['LoginOK']; ?></h3>
                 <?php
@@ -372,7 +381,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             <h4>Your most popular photos will appear here.</h4>
                             <p>Set your photos to public for more faves, comments and views.</p>
                             <p>For even more exposure, add them to Groups</p>
-                            <a class="text-decoration-none" href="">
+                            <a class="text-decoration-none" href="uploadImg.php">
                                 <p>Go to Camera Roll</p>
                             </a>
                         </div>
@@ -505,7 +514,10 @@ if (!isset($_SESSION['LoginOK'])) {
                         friends, family, or even other</p>
                     <p class=" text-center">Flickr members.</p>
                     <div class="d-flex justify-content-center">
+                        <a href="uploadImg.php">
                         <button type="button" class="btn btn-primary">Go to Camera Roll</button>
+                        </a>
+                        
                     </div>
                 </div>
                 <div id="album-photo" class="row d-flex me-1 ms-1 mt-3 ">

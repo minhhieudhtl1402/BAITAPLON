@@ -30,15 +30,15 @@ if (!isset($_SESSION['LoginOK'])) {
             <a href="" class="nav-item ">
                 <h2 class= "mt-3 "style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none">Your Photostream</a></h2>
             </a>
-            <a href="" class="nav-item ">
-                <h2 class= "mt-3  ms-3"style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none ">Create</a></h2>
+            <a href="createAlbum.php" class="nav-item ">
+                <h2 class= "mt-3  ms-3"style="font-size: 15px; font-weight: 700;"><a href="" class="text-secondary text-decoration-none ">Create Album</a></h2>
             </a>
            
             <a href="" class="nav-item  navb ">
                 <p class= "mt-4 text-end"style="font-size: 15px; font-weight: 200;"><a href="" class="text-secondary text-decoration-none">Old Uploadr</a></p>
             </a>
             <a href="" class="nav-item ">
-                <p class= "mt-4 ms-3 text-end "style="font-size: 15px; font-weight: 200; "><a href="" class="text-secondary text-decoration-none">New Here?</a></p>
+                <p class= "mt-4 ms-2 text-end "style="font-size: 15px; font-weight: 200; "><a href="" class="text-secondary text-decoration-none">New Here?</a></p>
             </a>
             <div class="img">
             <?php include 'dbConfig.php';
