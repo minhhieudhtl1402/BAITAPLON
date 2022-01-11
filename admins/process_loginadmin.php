@@ -23,9 +23,7 @@ if(isset($_POST['btnLogin'])){
         if(password_verify($pass,$pass_hash)){
             $_SESSION['AdminLogin'] = $name;
             
-            header("location: users.php"); 
-
-        
+            header("location: users.php");        
         }
         else
         {
