@@ -56,10 +56,12 @@ if (!isset($_SESSION['AdminLogin'])) {
               <a class="nav-link" href="#">Link</a>
             </li>
           </ul>
+          <a href="add_users.php" class="btn btn-lg btn-outline-info">Thêm User</a>
           <a type="button" class="btn btn-lg btn-outline-info">Xin chào <?php echo  $_SESSION['AdminLogin']; ?>
             <i class="bi bi-emoji-smile"></i></a>
           <!-- <h3 class="me-2">Xin chào <?php echo  $_SESSION['AdminLogin']; ?></h3>  -->
           <a type="button" href="adminLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
+          
         </div>
       </div>
     </nav>
@@ -68,7 +70,7 @@ if (!isset($_SESSION['AdminLogin'])) {
   <div id="background" class="container-fluid">
     <div class="container-fluid ">
       <h1 class="text-center mb-5">Quản Lí Người Dùng </h1>
-      <a href="add_users.php" class="btn btn-lg btn-outline-info">Thêm User</a>
+     
       <input type="text" class=" form-control" id="timkiem"  placeholder="Search..." >
       </div>
       <div id ="searchresult">

@@ -27,6 +27,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
                data:{input:input},
                success:function(data){
                  $("#searchresult").html(data);
+                 $("#searchresult").css("display","block");
                }
             });
           }else{
@@ -54,6 +55,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
               <a class="nav-link" href="#">Link</a>
             </li>
           </ul>
+          <a href="add_admins.php" class="btn btn-lg btn-outline-info">Thêm</a>
           <a type="button" class="btn btn-lg btn-outline-info">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?>
             <i class="bi bi-emoji-smile"></i></a>
           <!-- <h3 class="me-2">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?></h3>  -->
@@ -66,7 +68,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
   <div class="container-fluid">
     <div id="background" class="container-fluid bg-image">
       <h1 class="text-center  mb-5">QUẢN LÝ ADMINS </h1>
-      <button type="button" class="btn btn-outline-primary"><a href="add_admins.php">Thêm</a></button>
+      
       
       <input type="text" class=" form-control" id="timkiem"  placeholder="Search..." >
       </div>

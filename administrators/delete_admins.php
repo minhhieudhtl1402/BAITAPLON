@@ -7,8 +7,9 @@
             die("Kết nối thất bại.Vui lòng kiểm tra lại các thông tin máy chủ");
           }
           //b2:thực hiện truy vấn
-          $sql = "DELETE  FROM admins where admin_id = $admins_id";
+          $sql = "DELETE  FROM admins where admin_id = '$admins_id'";
           $number = mysqli_query($conn, $sql);
+          
           if ($number>0){
               header("location:admins.php");
           }
