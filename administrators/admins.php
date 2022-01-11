@@ -15,6 +15,26 @@ if (!isset($_SESSION['AdministratorLogin'])) {
   <link rel="stylesheet" href="assets/css/admins.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <title>QUẢN LÝ ADMINS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type ="text/javascript">
+   $(document).ready(function(){
+       $("#timkiem").keyup(function(){
+          var input = $(this).val();
+          if(input != ""){
+            $.ajax({
+               url:"ajaxAdministrators.php",
+               method:"POST",
+               data:{input:input},
+               success:function(data){
+                 $("#searchresult").html(data);
+               }
+            });
+          }else{
+            $("#searchresult").css("display","none");
+          }
+       });
+   })
+ </script>
 </head>
 
 <body>
@@ -48,6 +68,10 @@ if (!isset($_SESSION['AdministratorLogin'])) {
       <h1 class="text-center  mb-5">QUẢN LÝ ADMINS </h1>
       <button type="button" class="btn btn-outline-primary"><a href="add_admins.php">Thêm</a></button>
       
+      <input type="text" class=" form-control" id="timkiem"  placeholder="Search..." >
+      </div>
+      <div id ="searchresult">
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -61,7 +85,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
 
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           <?php
           //b1:kết nối database server
           $conn = mysqli_connect('localhost', 'root', '', 'flickr');
@@ -80,24 +104,27 @@ if (!isset($_SESSION['AdministratorLogin'])) {
                 <td><?php echo $row['name']; ?></td>
                 <td>********</td>
                 <td><?php echo $row['administrator_id']; ?></td>
-
                 <td><a href="update_admins.php?id=<?php echo $row['admin_id'];?>"><i class="bi bi-pencil-square text-black"></i></a></td>
-                <td><a href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
+                <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
               </tr>
+              
           <?php
             }
           }
           ?>
-
+          
         </tbody>
       </table>
     </div>
   </div>
 
 
+  
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  
 </body>
 
 </html>

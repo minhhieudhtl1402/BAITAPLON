@@ -30,7 +30,7 @@
         min-height: 40px;
         display: flex;
         position: absolute;
-        margin-top: 41px;
+        margin-top: 125px;
     }
     .form {
         display: flex;
@@ -114,12 +114,25 @@
        
     }
     .footer{
-        margin-top: -286px;
-    font-size: 10px;
+     margin-top: -233px;
+    font-size: 15px;
     display: flex;
     text-align: center;
-    margin-left: 19%;
+    margin-left: 8%;
 
     }
 }
+@media (max-width: 63.9375em) and (min-width: 46.25em) {
+    /* tablet */
+    .img-sign{
+        height: 1023px;
+       
+    }
+    form{
+        margin-left: -56px;
+    }
+    footer{
+        margin-left: 110px;
+    }
+    }
   
