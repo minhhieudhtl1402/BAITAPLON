@@ -188,13 +188,13 @@ if (!isset($_SESSION['LoginOK'])) {
                         ?>
 
 
-                                <div class=" p-1 img col-md-4 ">
+                                <div class="  img col-md-4 ">
                                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style =" width: 100%; height: 200px" class="img-fluid img-item">
                                     <div class="row nameTitle">
-                                        <div class=" text-white col-md-6" >
-                                         <a href="" class="text-decoration-none "> <?php echo $row['first_name'].' '.$row['last_name']; ?></a>
+                                        <div class=" text-white col-md-6 nameus" >
+                                         <a href="" class="text-decoration-none text-white"> <?php echo $row['first_name'].' '.$row['last_name']; ?></a>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 timeup">
                                             <?php echo $row['uploaded_on']; ?>
 
                                         </div>
