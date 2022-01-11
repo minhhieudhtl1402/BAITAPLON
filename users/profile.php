@@ -342,7 +342,7 @@ $name = $rs['first_name'] . ' ' . $rs['last_name'];
                             <div class="col-md-2">
                                 <a class="text-decoration-none" href="">
                                     <p>
-                                        <?php echo $_SESSION['mail'] ?></p>
+                                        <?php echo $row['email'] ?></p>
                                 </a>
 
                             </div>
