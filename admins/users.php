@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['AdminLogin'])) {
-  header("location:loginadmin.php");
+  header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -28,6 +28,7 @@ if (!isset($_SESSION['AdminLogin'])) {
                data:{input:input},
                success:function(data){
                  $("#searchresult").html(data);
+                 $("#searchresult").css("display","block");
                }
             });
           }else{
