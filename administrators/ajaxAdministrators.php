@@ -30,8 +30,10 @@ if(isset($_POST['input'])){
                 <tr>
                  <td><?php echo $row['admin_id']; ?></td>
                   <td><?php echo $row['name']; ?></td>
-                  <td>********</td>
+                  <td><?php echo $row['pass']; ?></td>
                   <td><?php echo $row['administrator_id']; ?></td>
+                  <td><a href="update_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-pencil-square text-black"></i></a></td>
+                  <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>
               </tr> 
               <?php
               }

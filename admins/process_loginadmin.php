@@ -8,13 +8,13 @@ if(isset($_POST['btnLogin'])){
     if(!$conn){
         die("kết nối thất bại!");
     }
-    $sql = "SELECT * FROM admins WHERE name = '$name' AND pass='$pass'";
+    $sql = "SELECT * FROM admins WHERE name = '$name'";
 
     
     $result = mysqli_query($conn,$sql);
    
     $rs=mysqli_fetch_array($result);
-    echo mysqli_num_rows($result);
+  
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         
@@ -23,9 +23,7 @@ if(isset($_POST['btnLogin'])){
         if(password_verify($pass,$pass_hash)){
             $_SESSION['AdminLogin'] = $name;
             
-            header("location: users.php"); 
-
-        
+            header("location: users.php");        
         }
         else
         {
