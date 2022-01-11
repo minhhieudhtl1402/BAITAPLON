@@ -18,6 +18,7 @@ header{
     width: 100%;
     position: fixed;
     z-index: 1;
+    top:0px;
 
 }
 .header-row
@@ -272,6 +273,30 @@ font-size: 15px;
 color:#fff;
 }
 .timeup{
+    font-size: 12px;
+    color: #fff;
+
+
+}
+  
+.nameTitle2 {
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    top: 77%;
+    width: 360px;
+     margin-left: 0px;
+     padding: 4px 0px;
+   
+
+ 
+    display: flex;
+}
+     
+.nameus2{
+font-size: 15px;
+color:#fff;
+}
+.timeup2{
     font-size: 12px;
     color: #fff;
 

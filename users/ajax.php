@@ -25,5 +25,12 @@ if (mysqli_num_rows($result) > 0) {
     }
 }
 mysqli_close($db);
+
+
+
+
 include('../template/footer.php');
 ?>
+
+
+
