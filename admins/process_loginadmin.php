@@ -14,7 +14,7 @@ if(isset($_POST['btnLogin'])){
     $result = mysqli_query($conn,$sql);
     $rs=mysqli_fetch_array($result);
     if(mysqli_num_rows($result) > 0){
-        
+
         $_SESSION['AdminLogin'] = $name;
         // $_SESSION['adminname']=$rs['name'];
         header("location: users.php"); 

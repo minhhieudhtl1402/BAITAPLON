@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['AdministratorLogin'])) {
-  header("location:loginAdministrator.php");
+  header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
           <a type="button" class="btn btn-lg btn-outline-info">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?>
             <i class="bi bi-emoji-smile"></i></a>
           <!-- <h3 class="me-2">Xin chào <?php echo  $_SESSION['AdministratorLogin']; ?></h3>  -->
-          <a type="button" href="adminLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
+          <a type="button" href="administratorLogout.php" class="nav-item btn btn-lg btn-outline-info">Thoát<i class="bi bi-box-arrow-right ms-1"></i></a>
         </div>
       </div>
     </nav>
@@ -102,7 +102,7 @@ if (!isset($_SESSION['AdministratorLogin'])) {
               <tr>
                 <th scope="row"><?php echo $row['admin_id']; ?></th>
                 <td><?php echo $row['name']; ?></td>
-                <td>********</td>
+                <td><?php echo $row['pass'] ?></td>
                 <td><?php echo $row['administrator_id']; ?></td>
                 <td><a href="update_admins.php?id=<?php echo $row['admin_id'];?>"><i class="bi bi-pencil-square text-black"></i></a></td>
                 <td><a onclick="return confirm('Bạn chắc chắn muốn xóa?')" href="delete_admins.php?id=<?php echo $row['admin_id']; ?>"><i class="bi bi-trash text-black"></i></a></td>

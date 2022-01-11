@@ -2,6 +2,6 @@
     session_start();
 if(isset($_SESSION['AdministratorLogin'])){
     unset($_SESSION['AdministratorLogin']);
-    header('location:loginAdministrator.php');
+    header('location:index.php');
 }
 ?>
