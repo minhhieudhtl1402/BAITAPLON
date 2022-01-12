@@ -113,7 +113,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1 ";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -138,7 +138,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
     <?php include 'dbConfig.php';
     $email = $_SESSION['LoginOK'];
-    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' and isCover='1'";
+    $query = "SELECT * FROM image_add WHERE user_email='$email' and isCover=1";
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -152,13 +152,16 @@ if (!isset($_SESSION['LoginOK'])) {
     ?>
     <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;">
     </div>
+
+
+
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -507,7 +510,7 @@ if (!isset($_SESSION['LoginOK'])) {
                                             <div class="modal-footer">
                                                 <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>         
                                                 <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>       
-                                                <button type="button" class="btn btn-info me-5" data-bs-dismiss="modal">Set as Avatar</button>
+                                                <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
 
                                             </div>
                                         </div>

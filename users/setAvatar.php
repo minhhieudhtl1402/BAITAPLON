@@ -11,11 +11,12 @@ if (!$conn) {
   die("Kết nối thất bại.Vui lòng kiểm tra lại các thông tin máy chủ");
 }
 //b2:thực hiện truy vấn
-$sql="UPDATE image_add SET isCover=0 where user_email='$email'";
+$sql="UPDATE image_add SET isAvatar=0 where user_email='$email'";
 $result=mysqli_query($conn,$sql);
 
-$sql = "UPDATE image_add SET isCover=1 where imageAdd_id = '$image_id'";
+$sql = "UPDATE image_add SET isAvatar=1 where imageAdd_id = '$image_id'";
 $number = mysqli_query($conn, $sql);
+
 if($number){
     header("location:you.php");
 }
