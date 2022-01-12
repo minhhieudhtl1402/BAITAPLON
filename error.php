@@ -1,3 +1,3 @@
 <?php
-echo'co gi do sai sai';
+echo'Có lỗi rồi';
 ?>
