@@ -581,7 +581,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
+                    <a href="" class=" mt-5 col-md-6 d-flex justify-content-center text-decoration-none" > 
                     <div >
                                 <div class="card " style="width: 18rem;">
                                     <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">

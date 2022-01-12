@@ -17,7 +17,8 @@ mysqli_close($db);
 
 $email = $rs['email'];
 $name = $rs['first_name'] . ' ' . $rs['last_name'];
-
+$describe=$rs['users_describe'];
+$registation_date=$rs['registation_date'];
 ?>
 
 
@@ -278,10 +279,9 @@ $name = $rs['first_name'] . ' ' . $rs['last_name'];
 
                             mysqli_close($db);
                             ?>
-                            <textarea id="writeSomething" name="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"><?php echo $row['users_describe']; ?></textarea>
+                            <textarea id="writeSomething" name="writeSomething" class="md-textarea form-control" rows="3" placeholder="Write a little about yourself"> <?php echo $describe; ?></textarea>
 
                         </div>
-                        <button class="btn btn-outline-info" id="btnWriteSomething">Save</button>
                     </form>
 
                     <hr>
@@ -330,7 +330,7 @@ $name = $rs['first_name'] . ' ' . $rs['last_name'];
                             </div>
                             <div class="col-md-2">
                                 <p>
-                                    <?php echo  $row['registation_date'] ?></p>
+                                    <?php echo  $registation_date; ?></p>
                             </div>
 
                         </div>
@@ -342,47 +342,12 @@ $name = $rs['first_name'] . ' ' . $rs['last_name'];
                             <div class="col-md-2">
                                 <a class="text-decoration-none" href="">
                                     <p>
-                                        <?php echo $_SESSION['mail'] ?></p>
+                                        <?php echo $email; ?></p>
                                 </a>
 
                             </div>
 
                         </div>
-                    </div>
-                    <hr>
-
-                    <div id="caculator">
-                        <div class="row ms-5">
-                            <div class="col-md-1 col-2 "><a href="" class="text-decoration-none text-dark">
-                                    <p>0</p>
-                                    <p>Views</p>
-                                </a></div>
-                            <div class="col-md-1 col-2">
-                                <a href="" class="text-decoration-none text-dark">
-                                    <p>0</p>
-                                    <p>Tags</p>
-                                </a>
-                            </div>
-                            <div class="col-md-1 col-3">
-                                <a href="" class="text-decoration-none text-dark">
-                                    <p>0</p>
-                                    <p>Geotags</p>
-                                </a>
-                            </div>
-                            <div class="col-md-1 col-2">
-                                <a href="" class="text-decoration-none text-dark">
-                                    <p>0</p>
-                                    <p>Faves</p>
-                                </a>
-                            </div>
-                            <div class="col-md-2 col-2">
-                                <a href="" class="text-decoration-none text-dark">
-                                    <p>0</p>
-                                    <p>Group</p>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                     <hr>
                     <h6 class="mt-3">Most popular photos</h6>
@@ -520,26 +485,102 @@ $name = $rs['first_name'] . ' ' . $rs['last_name'];
             <!-- Ket thuc Photostream -->
 
             <!-- Bat dau Album -->
+            
             <div class="container-fluid bg-light tab-pane  p-0  " id="Albums" role="tabpanel" aria-labelledby="Albums-tab">
                 <div class="row">
-                    <h4 class="mt-3 text-center">Let's make an album.</h4>
-                    <p class="mt-3 text-center">Easily organize all your photos into beautiful albums to share with
-                        friends, family, or even other</p>
-                    <p class=" text-center">Flickr members.</p>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary">Go to Camera Roll</button>
+                        <h3 class="mt-4"><?php echo $name." 's " ?>Avatar</h3>
                     </div>
+                    <?php include 'dbConfig.php';
+                    
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=2 ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
+                    <div >
+                                <div class="card " style="width: 18rem;">
+                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="text-decoration-none text-dark text-center" href="">
+                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </a>
+                            
+                    <?php
+                        }
+                    }
+                    ?>
+
                 </div>
-                <div id="album-photo" class="row d-flex me-1 ms-1 mt-3 ">
 
-                    <img class="img-thumbnail" src="https://image.thanhnien.vn/2048/uploaded/anhth/2021_08_15/naraka-bladepoint-dieu-can-biet03_slbk.jpeg" alt="">
-                    <img class="img-thumbnail" src="https://i.pinimg.com/originals/e0/64/7c/e0647c2b22a075f162ac55d75eb21d95.jpg" alt="">
-                    <img class="img-thumbnail" src="https://cdn.bhdw.net/im/viper-ning-naraka-bladepoint-tro-choi-dien-tu-truc-tuyen-hinh-nen-74907_L.jpg" alt="">
-                    <img class="img-thumbnail" src="https://hoanghapc.vn/media/news/2406_naraka-bladepoint-1.jpg" alt="">
-                    <img class="img-thumbnail" src="https://i.pinimg.com/originals/b7/e5/6d/b7e56dfc58e58bb53bd14b8ff6dd794d.jpg" alt="">
-
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <h3 class="mt-4"><?php echo $name." 's " ?>Cover</h3>
+                    </div>
+                    <?php include 'dbConfig.php';
+                   
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=1 ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
+                    <div >
+                                <div class="card " style="width: 18rem;">
+                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="text-decoration-none text-dark text-center" href="">
+                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </a>
+                            
+                    <?php
+                        }
+                    }
+                    ?>
 
                 </div>
+                
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <h3 class="mt-4"><?php echo $name." 's " ?>Image</h3>
+                    </div>
+                    <?php include 'dbConfig.php';
+                 
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=3 ORDER BY uploaded_on DESC";
+                    $result = mysqli_query($db, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <a href="" class=" mt-5 col-md-6 d-flex justify-content-center text-decoration-none" > 
+                    <div >
+                                <div class="card " style="width: 18rem;">
+                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="text-decoration-none text-dark text-center" href="">
+                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </a>
+                            
+                    <?php
+                        }
+                    }
+                    ?>
+
+                </div>
+
+            </div>
             </div>
             <!-- Ket thuc Album -->
 
