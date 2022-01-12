@@ -189,6 +189,9 @@ if (!isset($_SESSION['LoginOK'])) {
                         $result = mysqli_query($db, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                if($row['users_id']==$id){
+                                    continue;
+                                }
                         ?>
 
 
@@ -229,10 +232,13 @@ if (!isset($_SESSION['LoginOK'])) {
                         <?php include 'dbConfig.php';
                         $id= $_SESSION['id'];
                         $email = $_SESSION['LoginOK'];
-                        $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE not EXISTS(SELECT following_id FROM follow WHERE users_id='$id' AND users.users_id=follow.following_id) and  categories_id='2' order by RAND() limit 4;";
+                        $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE not EXISTS(SELECT following_id FROM follow WHERE users_id='$id' AND users.users_id=follow.following_id)  order by RAND() limit 4;";
                         $result = mysqli_query($db, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                if($row['users_id']==$id){
+                                    continue;
+                                }
                         ?>
 
 
