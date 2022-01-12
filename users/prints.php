@@ -19,7 +19,7 @@ if (!isset($_SESSION['LoginOK'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
 
-    <link rel="stylesheet" href=".././assets/css/reponsive.css">
+    <link rel="stylesheet" href=".././assets/css/reponsiveM.css">
 </head>
 
 <body>

@@ -342,7 +342,7 @@ $registation_date=$rs['registation_date'];
                             <div class="col-md-2">
                                 <a class="text-decoration-none" href="">
                                     <p>
-                                        <?php echo $email; ?></p>
+                                        <?php echo $row['email'] ?></p>
                                 </a>
 
                             </div>
