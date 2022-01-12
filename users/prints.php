@@ -15,7 +15,7 @@ if (!isset($_SESSION['LoginOK'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href=".././assets/icon/themify-icons-font/themify-icons/themify-icons.css">
 
@@ -123,7 +123,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                 <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);

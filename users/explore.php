@@ -11,7 +11,7 @@ if (!isset($_SESSION['LoginOK'])) {
         <nav class="navbar navbar-expand-lg navbar-dark header-row bg-black container">
 
 
-            <a class="navbar-brand nav-link " href="uploadImg.php">
+            <a class="navbar-brand nav-link " href="index.php">
                 <div class="logo">
                     <img src=".././assets/img/logo3.png" alt="" class="img-logo">
                     <h2>flickr</h2>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);

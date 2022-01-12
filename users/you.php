@@ -113,7 +113,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -138,7 +138,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
     <?php include 'dbConfig.php';
     $email = $_SESSION['LoginOK'];
-    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' ORDER BY uploaded_on DESC";
+    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' and isCover='1'";
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -158,7 +158,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <a class=" img-fluid " href="update_avatar.php">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -252,8 +252,10 @@ if (!isset($_SESSION['LoginOK'])) {
         <!-- Tab panes -->
         <div class="tab-content border border-light shadow-lg">
             <!-- Bat dau  About -->
+
             <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel" aria-labelledby="About-tab">
-                
+
+
                 <div class="container" style="height: 84;">
                     <form autocomplete action="process_update_describe.php" method="POST" id="formWriteSomething">
                         <div class="md-form mb-4 pink-textarea active-pink-textarea">
@@ -472,29 +474,51 @@ if (!isset($_SESSION['LoginOK'])) {
                     <!--Đoạn này để ảnh mà người dùng đăng lên  -->
 
                     <div class="d-flex flex-wrap">
+
                         <?php include 'dbConfig.php';
                         $email = $_SESSION['LoginOK'];
                         $query = "SELECT * FROM image_add WHERE user_email='$email' ORDER BY uploaded_on DESC";
                         $result = mysqli_query($db, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $id = $row['imageAdd_id'];
                         ?>
 
-                                <div class=" p-1  col-md-4 ">
-                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
-                                    <!-- <div class="row view">
-                                        
-                                            <div  class="img-title col-md-4  fs-3"><?php echo $row['imageAdd_title']; ?></div>
 
-                                       
-                                    </div> -->
 
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $id; ?>">
+                                    <div class="">
+                                        <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                    </div>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-fullscreen">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" alt="">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>         
+                                                <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>       
+                                                <button type="button" class="btn btn-info me-5" data-bs-dismiss="modal">Set as Avatar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                         <?php
                             }
                         }
                         mysqli_close($db);
                         ?>
+
                     </div>
                 </div>
             </div>
