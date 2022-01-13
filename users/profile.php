@@ -17,8 +17,8 @@ mysqli_close($db);
 
 $email = $rs['email'];
 $name = $rs['first_name'] . ' ' . $rs['last_name'];
-$describe=$rs['users_describe'];
-$registation_date=$rs['registation_date'];
+$describe = $rs['users_describe'];
+$registation_date = $rs['registation_date'];
 ?>
 
 
@@ -131,7 +131,7 @@ $registation_date=$rs['registation_date'];
                 </div>
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
-                        $user_email=$_SESSION['LoginOK'];
+                    $user_email = $_SESSION['LoginOK'];
                     $query = "SELECT * FROM image_add WHERE user_email='$user_email'  and isAvatar=1";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
@@ -163,7 +163,7 @@ $registation_date=$rs['registation_date'];
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
-                <a class=" img-fluid " >
+                <a class=" img-fluid ">
                     <?php include 'dbConfig.php';
 
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
@@ -221,8 +221,8 @@ $registation_date=$rs['registation_date'];
                         <form action="process_unfollow.php" method='post'>
                             <div class="dropdown">
                                 <button class="btn btn-outline-light btn-lg " name="changeCover" id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Unfollow</button>
-                                <input style="display: none;" type="text" class="form-control" id="txtUsers_id" name="txtUsers_id"  value="<?php echo $id_user; ?>">
-                                <input style="display: none;" type="text" class="form-control" id="txtFollowing_id" name="txtFollowing_id" value="<?php echo $id;?>">
+                                <input style="display: none;" type="text" class="form-control" id="txtUsers_id" name="txtUsers_id" value="<?php echo $id_user; ?>">
+                                <input style="display: none;" type="text" class="form-control" id="txtFollowing_id" name="txtFollowing_id" value="<?php echo $id; ?>">
                             </div>
                         </form>
                     <?php
@@ -231,8 +231,8 @@ $registation_date=$rs['registation_date'];
                         <form action="process_follow.php" method='post'>
                             <div class="dropdown">
                                 <button class="btn btn-outline-light btn-lg " name="changeCover" id="changeCover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Follow</button>
-                                <input style="display: none;" type="text" class="form-control" id="txtUsers_id" name="txtUsers_id"  value="<?php echo $id_user; ?>">
-                                <input style="display: none;" type="text" class="form-control" id="txtFollowing_id" name="txtFollowing_id" value="<?php echo $id;?>">
+                                <input style="display: none;" type="text" class="form-control" id="txtUsers_id" name="txtUsers_id" value="<?php echo $id_user; ?>">
+                                <input style="display: none;" type="text" class="form-control" id="txtFollowing_id" name="txtFollowing_id" value="<?php echo $id; ?>">
                             </div>
                         </form>
                     <?php
@@ -256,7 +256,7 @@ $registation_date=$rs['registation_date'];
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link " id="Albums-tab" data-bs-toggle="tab" data-bs-target="#Albums" type="button" role="tab" aria-controls="events" aria-selected="false">Albums</button>
-            </li>         
+            </li>
 
         </ul>
 
@@ -291,13 +291,13 @@ $registation_date=$rs['registation_date'];
                             <div class="col-md-1  ">
                                 <p>Showcase</p>
                             </div>
-                           
+
 
                         </div>
                         <div id="showcase-image" class="row img-fluid bg-image bg-danger d-flex justify-content-center align-items-center">
                             <div class="">
                                 <h4 class="text-center">This is <?php echo $name; ?> 's showcase.</h4>
-                                
+
                             </div>
 
                         </div>
@@ -305,11 +305,7 @@ $registation_date=$rs['registation_date'];
                     <hr>
 
                     <div class="join ">
-                        <div class="row d-flex justify-content-end ">
-                            <a class="col-md-1" href=""><span class="material-icons-outlined text-black">
-                                    edit
-                                </span></a>
-                        </div>
+
                         <div class="row  ms-5">
                             <div class="col-md-1">
                                 <p>Joined</p>
@@ -436,18 +432,45 @@ $registation_date=$rs['registation_date'];
                         $rs = mysqli_fetch_array($result);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                $id = $row['imageAdd_id'];
                         ?>
 
                                 <div class=" p-1 img col-md-4 ">
-                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" style=" witdh: 100% ; height: 250px;" alt="" class="img-fluid img-item">
-                                    <!-- <div class="row">
-                                        <div class=" ">
-                                            <div class="text-white"></div>
-
-
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $id; ?>">
+                                        <div class="">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
                                         </div>
-                                    </div> -->
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-fullscreen">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" style=" witdh: 100% ; height: 250px;" alt="" class="img-fluid img-item">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                                    <!-- <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a> -->
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
 
                                 </div>
                         <?php
@@ -466,32 +489,47 @@ $registation_date=$rs['registation_date'];
             <!-- Ket thuc Photostream -->
 
             <!-- Bat dau Album -->
-            
+
             <div class="container-fluid bg-light tab-pane  p-0  " id="Albums" role="tabpanel" aria-labelledby="Albums-tab">
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4"><?php echo $name." 's " ?>Avatar</h3>
+                        <h3 class="mt-4"><?php echo $name . " 's " ?>Avatar</h3>
                     </div>
                     <?php include 'dbConfig.php';
-                    
+
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=2 ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="ProfileModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
+                                            
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    </a>
-                            
+
                     <?php
                         }
                     }
@@ -501,59 +539,89 @@ $registation_date=$rs['registation_date'];
 
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4"><?php echo $name." 's " ?>Cover</h3>
+                        <h3 class="mt-4"><?php echo $name . " 's " ?>Cover</h3>
                     </div>
                     <?php include 'dbConfig.php';
-                   
+
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=1 ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                             <!-- Button trigger modal -->
+                             <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="ProfileModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
+                                            
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    </a>
-                            
+
                     <?php
                         }
                     }
                     ?>
 
                 </div>
-                
+
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4"><?php echo $name." 's " ?>Image</h3>
+                        <h3 class="mt-4"><?php echo $name . " 's " ?>Image</h3>
                     </div>
                     <?php include 'dbConfig.php';
-                 
+
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id=3 ORDER BY uploaded_on DESC";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                    <a href="" class=" mt-5 col-md-6 d-flex justify-content-center text-decoration-none" > 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                             <!-- Button trigger modal -->
+                             <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="ProfileModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
+                                            
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    </a>
-                            
+
                     <?php
                         }
                     }
@@ -562,11 +630,11 @@ $registation_date=$rs['registation_date'];
                 </div>
 
             </div>
-            </div>
-            <!-- Ket thuc Album -->
-
-                
         </div>
+        <!-- Ket thuc Album -->
+
+
+    </div>
     </div>
 
     <div class=" cn-footer container-fluid bg-black p-0">
