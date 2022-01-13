@@ -113,7 +113,7 @@ if (!isset($_SESSION['LoginOK'])) {
                 <div class="nav-item nav-item-mb">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1 ";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -135,9 +135,10 @@ if (!isset($_SESSION['LoginOK'])) {
         </nav>
 
     </header>
+
     <?php include 'dbConfig.php';
     $email = $_SESSION['LoginOK'];
-    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='1' ORDER BY uploaded_on DESC";
+    $query = "SELECT * FROM image_add WHERE user_email='$email' and isCover=1";
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -151,13 +152,16 @@ if (!isset($_SESSION['LoginOK'])) {
     ?>
     <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;">
     </div>
+
+
+
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid " href="update_avatar.php">
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' ORDER BY uploaded_on DESC";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -219,7 +223,6 @@ if (!isset($_SESSION['LoginOK'])) {
     </div>
     </div>
 
-
     <div class="container">
         <ul class="nav nav-tabs tab-Content container  tabUI " id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -252,6 +255,7 @@ if (!isset($_SESSION['LoginOK'])) {
         <!-- Tab panes -->
         <div class="tab-content border border-light shadow-lg">
             <!-- Bat dau  About -->
+
             <div class="container-fluid bg-light tab-pane active active-black p-0  " id="About" role="tabpanel" aria-labelledby="About-tab">
 
 
@@ -473,29 +477,51 @@ if (!isset($_SESSION['LoginOK'])) {
                     <!--Đoạn này để ảnh mà người dùng đăng lên  -->
 
                     <div class="d-flex flex-wrap">
+
                         <?php include 'dbConfig.php';
                         $email = $_SESSION['LoginOK'];
                         $query = "SELECT * FROM image_add WHERE user_email='$email' ORDER BY uploaded_on DESC";
                         $result = mysqli_query($db, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $id = $row['imageAdd_id'];
                         ?>
 
-                                <div class=" p-1  col-md-4 ">
-                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
-                                    <!-- <div class="row view">
-                                        
-                                            <div  class="img-title col-md-4  fs-3"><?php echo $row['imageAdd_title']; ?></div>
 
-                                       
-                                    </div> -->
 
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $id; ?>">
+                                    <div class="">
+                                        <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                    </div>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-fullscreen">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>         
+                                                <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>       
+                                                <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                         <?php
                             }
                         }
                         mysqli_close($db);
                         ?>
+
                     </div>
                 </div>
             </div>
@@ -510,7 +536,7 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="container-fluid bg-light tab-pane  p-0  " id="Albums" role="tabpanel" aria-labelledby="Albums-tab">
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4">Your Avatar</h3>
+                        <h3 class="mt-5  text-primary">Your Avatar</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -519,19 +545,19 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                            <a href="" class="mt-3 col-md-4 d-flex justify-content-center text-decoration-none">
+                                <div>
+                                    <div class="card " style="width: 18rem;">
+                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div class="text-decoration-none text-dark text-center" href="">
+                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    </a>
-                            
+                            </a>
+
                     <?php
                         }
                     }
@@ -541,7 +567,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4">Your Cover</h3>
+                        <h3 class="mt-5 text-primary">Your Cover</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -550,29 +576,29 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <a href="" class="mt-5 col-md-6 d-flex justify-content-center text-decoration-none"> 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                            <a href="" class="mt-3 col-md-6 d-flex justify-content-center text-decoration-none">
+                                <div>
+                                    <div class="card " style="width: 18rem;">
+                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div class="text-decoration-none text-dark text-center" href="">
+                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    </a>
-                            
+                            </a>
+
                     <?php
                         }
                     }
                     ?>
 
                 </div>
-                
+
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-4">Your Post Image</h3>
+                        <h3 class="mt-5 text-primary">Your Post Image</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -581,19 +607,19 @@ if (!isset($_SESSION['LoginOK'])) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <a href="" class=" mt-5 col-md-6 d-flex justify-content-center text-decoration-none" > 
-                    <div >
-                                <div class="card " style="width: 18rem;">
-                                    <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                    <div class="card-body">
-                                        <div class="text-decoration-none text-dark text-center" href="">
-                                            <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                            <a href="" class=" mt-3 col-md-4 d-flex justify-content-center text-decoration-none">
+                                <div>
+                                    <div class="card " style="width: 18rem;">
+                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div class="text-decoration-none text-dark text-center" href="">
+                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    </a>
-                            
+                            </a>
+
                     <?php
                         }
                     }
@@ -639,6 +665,10 @@ if (!isset($_SESSION['LoginOK'])) {
 
             <!-- Bat dau Galleries -->
             <div class="container-fluid bg-light tab-pane  p-0  " id="Galleries" role="tabpanel" aria-labelledby="Galleries-tab">
+                <div class="row">
+
+
+                </div>
                 <div class="row">
                     <h4 class="mt-3 text-center">Your gallery walls are looking pretty bare.</h4>
                     <p class="mt-3 text-center">Galleries are a way to showcase other photographers’ photos and videos.
