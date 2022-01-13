@@ -508,8 +508,8 @@ if (!isset($_SESSION['LoginOK'])) {
                                                 <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
                                             </div>
                                             <div class="modal-footer">
-                                                <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>         
-                                                <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>       
+                                                <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                                <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>
                                                 <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
 
                                             </div>
@@ -536,7 +536,7 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="container-fluid bg-light tab-pane  p-0  " id="Albums" role="tabpanel" aria-labelledby="Albums-tab">
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-5  text-primary">Your Avatar</h3>
+                        <h3 class="mt-5  text-black">Your Avatar</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -544,19 +544,34 @@ if (!isset($_SESSION['LoginOK'])) {
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                            <a href="" class="mt-3 col-md-4 d-flex justify-content-center text-decoration-none">
-                                <div>
-                                    <div class="card " style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div class="text-decoration-none text-dark text-center" href="">
-                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
-                                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#PhotostreamModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="PhotostreamModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="PhotostreamModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="PhotostreamModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                            <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>
+                                            <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
 
                     <?php
                         }
@@ -564,10 +579,10 @@ if (!isset($_SESSION['LoginOK'])) {
                     ?>
 
                 </div>
-
+  
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-5 text-primary">Your Cover</h3>
+                        <h3 class="mt-5  text-black">Your Cover</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -575,19 +590,34 @@ if (!isset($_SESSION['LoginOK'])) {
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                            <a href="" class="mt-3 col-md-6 d-flex justify-content-center text-decoration-none">
-                                <div>
-                                    <div class="card " style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div class="text-decoration-none text-dark text-center" href="">
-                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
-                                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#PhotostreamModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="PhotostreamModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="PhotostreamModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="PhotostreamModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                            <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>
+                                            <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
 
                     <?php
                         }
@@ -598,7 +628,7 @@ if (!isset($_SESSION['LoginOK'])) {
 
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <h3 class="mt-5 text-primary">Your Post Image</h3>
+                        <h3 class="mt-5  text-black">Your Posted Image</h3>
                     </div>
                     <?php include 'dbConfig.php';
                     $email = $_SESSION['LoginOK'];
@@ -606,19 +636,34 @@ if (!isset($_SESSION['LoginOK'])) {
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $id = $row['imageAdd_id'];
                     ?>
-                            <a href="" class=" mt-3 col-md-4 d-flex justify-content-center text-decoration-none">
-                                <div>
-                                    <div class="card " style="width: 18rem;">
-                                        <img class="card-img-top" src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="Card image cap">
-                                        <div class="card-body">
-                                            <div class="text-decoration-none text-dark text-center" href="">
-                                                <h4 class="card-text"><?php echo $row['uploaded_on'];  ?></h4>
-                                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#PhotostreamModal<?php echo $id; ?>">
+                                <div class="">
+                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
+                                </div>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="PhotostreamModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="PhotostreamModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="PhotostreamModalLabel"><?php echo $row['uploaded_on'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" class="img-fluid" style="width:100%" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                            <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a>
+                                            <a href="setAvatar.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info me-5">Set as Avatar</a>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
 
                     <?php
                         }
