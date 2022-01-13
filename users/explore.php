@@ -99,7 +99,7 @@ if (!isset($_SESSION['LoginOK'])) {
             <div class="nav-item nav-item-mb">
                 <?php include 'dbConfig.php';
                 $email = $_SESSION['LoginOK'];
-                $query = "SELECT * FROM image_add WHERE user_email='$email' and categories_id='2' and isAvatar='1'";
+                $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
                 $result = mysqli_query($db, $query);
                 if (mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
