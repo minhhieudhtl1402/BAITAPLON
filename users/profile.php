@@ -163,7 +163,7 @@ $registation_date=$rs['registation_date'];
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
-                <a class=" img-fluid " href="update_avatar.php">
+                <a class=" img-fluid " >
                     <?php include 'dbConfig.php';
 
                     $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
@@ -291,27 +291,13 @@ $registation_date=$rs['registation_date'];
                             <div class="col-md-1  ">
                                 <p>Showcase</p>
                             </div>
-                            <div class="col-md-1 ">
-                                <a href=""><span class="material-icons-outlined text-black">
-                                        edit
-                                    </span></a>
-                            </div>
-                            <div id="showcase-add" class="col-12 col-md-10 d-flex justify-content-end">
-                                <a href="">
-                                    <span class=" material-icons-outlined text-black">
-                                        add
-                                    </span>
-                                </a>
-                            </div>
+                           
 
                         </div>
                         <div id="showcase-image" class="row img-fluid bg-image bg-danger d-flex justify-content-center align-items-center">
                             <div class="">
-                                <h4 class="text-center">This is your showcase.</h4>
-                                <h4 class="text-center">Show off up to 25 of your photos.</h4>
-                                <a class="text-decoration-none" href="">
-                                    <h4 class="text-center ">Get started</h4>
-                                </a>
+                                <h4 class="text-center">This is <?php echo $name; ?> 's showcase.</h4>
+                                
                             </div>
 
                         </div>
@@ -353,12 +339,7 @@ $registation_date=$rs['registation_date'];
                     <h6 class="mt-3">Most popular photos</h6>
                     <div id="popular-photo" class=" text-center bg-image d-flex justify-content-lg-center align-items-center ">
                         <div>
-                            <h4>Your most popular photos will appear here.</h4>
-                            <p>Set your photos to public for more faves, comments and views.</p>
-                            <p>For even more exposure, add them to Groups</p>
-                            <a class="text-decoration-none" href="">
-                                <p>Go to Camera Roll</p>
-                            </a>
+                            <h4><?php echo $name; ?> 's most popular photos will appear here.</h4>
                         </div>
                     </div>
                     <hr>
