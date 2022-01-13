@@ -69,7 +69,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button" >
-                            <a href="signup.php " class="text-decoration-none text-black Start" >Start For Free</a></button>
+                            <a href="signup.php " class="text-decoration-none text-black Start" ><h3>Start For Free</h3></a></button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
               
@@ -98,7 +98,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button">
-                            <a href="signup.php " class="text-decoration-none text-black  Start" >Start For Free</a>
+                            <a href="signup.php " class="text-decoration-none text-black  Start" ><h3>Start For Free</h3></a>
                           
                         </button>
                             <div class="name-img mt-5">
@@ -118,7 +118,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class=" btn btn-light button-style" type="button">
-                        <a href="signup.php " class="text-decoration-none text-black  Start" >Start For Free</a></button>
+                        <a href="signup.php " class="text-decoration-none text-black  Start" ><h3>Start For Free</h3></a></button>
 
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
@@ -138,7 +138,7 @@
                             Join the Flickr community, home to tens of billions of photos and 2 million groups.
                         </h3>
                         <button class="btn btn-light button-style " type="button">
-                            <a href="signup.php " class="text-decoration-none text-black  Start" >Start For Free</a>
+                            <a href="signup.php " class="text-decoration-none text-black  Start" ><h3>Start For Free</h3></a>
                             </button>
                             <div class="name-img mt-5">
                                 <a href="https://www.flickr.com/about " style="color: white;">Welcome to flickr</a>
