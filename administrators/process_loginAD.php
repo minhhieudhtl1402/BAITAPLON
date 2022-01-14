@@ -8,7 +8,7 @@ if(isset($_POST['btnLogin'])){
     if(!$conn){
         die("kết nối thất bại!");
     }
-    $sql = "SELECT * FROM administrators WHERE name = '$name' and pass='$pass' ";
+    $sql = "SELECT * FROM administrators WHERE name = '$name' and pass ='$pass' ";
     $result = mysqli_query($conn,$sql);
     $rs=mysqli_fetch_array($result);
 
