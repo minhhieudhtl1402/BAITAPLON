@@ -17,12 +17,14 @@ if(isset($_POST['btnLogin'])){
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         
-             $_SESSION['AdminLogin'] = $name;
+             $_SESSION['AdministratorLogin'] = $name;
              
-             header("location: admins.php");        
+             header("location: admins.php");       
+            echo "da chay toi day"; 
         
         
      }else{
+        
          $error = "Bạn nhập thông tin chưa chính xác";
          header("location: index.php?error=$error"); 
      }
@@ -32,28 +34,7 @@ if(isset($_POST['btnLogin'])){
  }
  else {
      header('location: admins.php');
+    
  }
  ?>
 
-
-        
-        <!-- $_SESSION['AdministratorLogin'] = $name;
-        header("location: admins.php"); 
-    }else{
-        $error = "Bạn nhập thông tin chưa chính xác";
-        header("location: loginAdministrator.php?error=$error"); 
-    }
-
-    
-    mysqli_close($conn);
-    
-
-
-}
-else {
-    header('location:admins.php');
-}
-
-
-
-?> -->
