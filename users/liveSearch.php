@@ -11,29 +11,18 @@ if (isset($_POST['input'])) {
             $lastName = $row['last_name'];
             $email = $row['email'];
 
-            // $query1 = "SELECT *
-            //                 from image_add
-            //                 where user_email='$email' and categories_id='2'
-            //                 ORDER BY uploaded_on DESC
-            //                 LIMIT 1;";
-            // $result1 = mysqli_query($db, $query1);
-            // if (mysqli_num_rows($result1) > 0) {
-            //     $row1 = mysqli_fetch_assoc($result1);
-            //     $imageLink = $row1['imageAdd_link'];                                        
-            
-
 ?>
             <div id="khungSearch" class="row mt-3">
 
-                <a class="row  " class="text-black  " style="text-decoration: none;" href="profile.php?id=<?php echo $row['users_id']; ?>">
-                
+                <a class="row" class="text-black  " style="text-decoration: none;" href="profile.php?id=<?php echo $row['users_id']; ?>">
+
                     <img class="col-md-4" style="border-radius:50%; height:50px;width:50px;" src="../assets/img/userImg/defaultAvatar.webp" alt="">
                     <div class="row col-md-8">
                         <h6 class=" d-flex align-items-center text-black text-decoration-none"><?php echo $firstName . ' ' . $lastName;  ?></h6>
                         <p class=" d-flex align-items-center text-black text-decoration-none"><?php echo $email; ?></h6>
                     </div>
                 </a>
-            
+
             </div>
 <?php
         }

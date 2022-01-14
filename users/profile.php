@@ -29,7 +29,7 @@ $registation_date = $rs['registation_date'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> You|Flickr</title>
+    <title>Flickr</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href=".././assets/css/you_style.css">
@@ -160,13 +160,31 @@ $registation_date = $rs['registation_date'];
 
     <div id="SEARCH_RESULT" class="bg-light" style="width:250px; position:absolute;right:390px;">
     </div>
+
+
+    <?php include 'dbConfig.php';
+
+    $query = "SELECT * FROM image_add WHERE user_email='$email' and isCover=1 ";
+    $result = mysqli_query($db, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $link = $row['imageAdd_link'];
+    } else {
+        $row = ['imageAdd_link' => 'defaultAvatar.jpg'];
+        $link = $row['imageAdd_link'];
+    }
+
+    mysqli_close($db);
+    ?>
+
+
     <div id="cover" class="img-fluid bg-image d-flex flex-column  align-items-center justify-content-center" style=" witdh: 100% ;background-image: url('../assets/img/userImg/<?php echo $link; ?>');">
         <div id="cover-info" class="row text-white ps-5 pe-5 " style="width: 100% ;background-color: rgba(0, 0, 0, 0.3); ">
             <div class="col-md-5 d-flex justify-content-center align-items-center ">
                 <a class=" img-fluid ">
                     <?php include 'dbConfig.php';
 
-                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1";
+                    $query = "SELECT * FROM image_add WHERE user_email='$email' and isAvatar=1 ";
                     $result = mysqli_query($db, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
@@ -178,7 +196,7 @@ $registation_date = $rs['registation_date'];
 
                     mysqli_close($db);
                     ?>
-                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" id="avatar" class="img-fluid  border border-white " alt="">
+                    <img src="../assets/img/userImg/<?php echo $link; ?>" id="avatar" class="img-fluid  border border-white " alt="">
                 </a>
             </div>
 
@@ -523,7 +541,7 @@ $registation_date = $rs['registation_date'];
                                         </div>
                                         <div class="modal-footer">
                                             <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
-                                            
+
 
                                         </div>
                                     </div>
@@ -549,8 +567,8 @@ $registation_date = $rs['registation_date'];
                         while ($row = mysqli_fetch_assoc($result)) {
                             $id = $row['imageAdd_id'];
                     ?>
-                             <!-- Button trigger modal -->
-                             <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
                                 <div class="">
                                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
                                 </div>
@@ -569,7 +587,7 @@ $registation_date = $rs['registation_date'];
                                         </div>
                                         <div class="modal-footer">
                                             <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
-                                            
+
 
                                         </div>
                                     </div>
@@ -595,8 +613,8 @@ $registation_date = $rs['registation_date'];
                         while ($row = mysqli_fetch_assoc($result)) {
                             $id = $row['imageAdd_id'];
                     ?>
-                             <!-- Button trigger modal -->
-                             <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn p-1  col-md-4 " data-bs-toggle="modal" data-bs-target="#ProfileModal<?php echo $id; ?>">
                                 <div class="">
                                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" style="position:relative; height: 250px" class="img-fluid img img-item">
                                 </div>
@@ -615,7 +633,7 @@ $registation_date = $rs['registation_date'];
                                         </div>
                                         <div class="modal-footer">
                                             <!-- <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a> -->
-                                            
+
 
                                         </div>
                                     </div>
