@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['LoginOK'])) {
+    header("location:login.php");
+}
+?>
+<?php
 include("dbConfig.php");
 if (isset($_POST['input'])) {
     $input = $_POST['input'];
@@ -13,6 +19,21 @@ if (isset($_POST['input'])) {
 
 ?>
             <div id="khungSearch" class="row mt-3">
+                <?php
+                if ($_SESSION['LoginOK'] == $email) {
+                ?>
+                    <a class="row" class="text-black  " style="text-decoration: none;" href="you.php">
+
+                        <img class="col-md-4" style="border-radius:50%; height:50px;width:50px;" src="../assets/img/userImg/defaultAvatar.webp" alt="">
+                        <div class="row col-md-8">
+                            <h6 class=" d-flex align-items-center text-black text-decoration-none"><?php echo $firstName . ' ' . $lastName;  ?></h6>
+                            <p class=" d-flex align-items-center text-black text-decoration-none"><?php echo $email; ?></h6>
+                        </div>
+                    </a>
+
+                <?php }
+                else{
+                ?>
 
                 <a class="row" class="text-black  " style="text-decoration: none;" href="profile.php?id=<?php echo $row['users_id']; ?>">
 
@@ -22,7 +43,7 @@ if (isset($_POST['input'])) {
                         <p class=" d-flex align-items-center text-black text-decoration-none"><?php echo $email; ?></h6>
                     </div>
                 </a>
-
+                 <?php } ?>   
             </div>
 <?php
         }
