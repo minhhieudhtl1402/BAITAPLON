@@ -29,7 +29,8 @@ if(isset($_POST['btnLogin'])){
         }
         else
         {
-            header('location: error.php');
+            $error = "Bạn nhập thông tin chưa chính xác";
+        header("location: login.php?error=$error"); 
         }
        
     }else{
