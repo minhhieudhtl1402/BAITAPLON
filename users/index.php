@@ -180,7 +180,7 @@ if (!isset($_SESSION['LoginOK'])) {
                             </span>
                         </div>
                     </div>
-                    <div class="row   mb-5 p-2 bg-white  pb-3" <div>
+                    <div class="row   mb-5 p-2 bg-white  pb-3" </div>
                         <?php include 'dbConfig.php';
                         $email = $_SESSION['LoginOK'];
                         $id = $_SESSION['id'];

@@ -40,7 +40,7 @@
                             <input type="Password" class="form-control mt-3 mb-2" id="inputPass" name="txtPass" placeholder="Password" required />
                             <?php
                             if (isset($_GET['error'])) {
-                                echo "<p style='color:red'> {$_GET['error']} </p>";
+                                echo "<p style='color:red'> Nhập thông tin chưa chính xác </p>";
                             }
                             ?>
                             <button class="form-submit" name="btnLogin">Submit</button>

@@ -44,9 +44,8 @@
                                     placeholder="Password" required />
                                  <?php
                                 if(isset($_GET['error'])){
-                                    echo "<p style='color:red'> {$_GET['error']} </p>";
+                                    echo "<p style='color:red'> Nhập thông tin chưa chính xác </p>";
                                 }
-
                                 ?>
                                 
                          
