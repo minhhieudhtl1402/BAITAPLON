@@ -416,11 +416,7 @@ $registation_date = $rs['registation_date'];
                     </div>
                     <div class="col-md-10 d-flex justify-content-end text-center mt-2 col-12">
 
-                        <a class="text-black text-decoration-none " href="">
-                            <span class="ms-3 material-icons-outlined ">
-                                edit
-                            </span>
-                        </a>
+                        
                         <a class="text-black text-decoration-none " href="">
                             <span class="ms-3 material-icons-outlined">
                                 search
