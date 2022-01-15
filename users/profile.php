@@ -470,13 +470,9 @@ $registation_date = $rs['registation_date'];
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" style=" witdh: 100% ; height: 250px;" alt="" class="img-fluid img-item">
+                                                    <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" style=" witdh: 100% ; " alt="" class="img-fluid img-item">
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="deleteImage.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-outline-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
-                                                    <!-- <a href="setCover.php?id=<?php echo $row['imageAdd_id'] ?>" type="button" class="btn btn-info">Set as Cover</a> -->
-
-
                                                 </div>
                                             </div>
                                         </div>
