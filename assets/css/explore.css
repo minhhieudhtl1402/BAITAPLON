@@ -171,18 +171,35 @@ body .tabUI {
       
   }
   .title {
-    position: absolute;
-    top: 80%;
+    
+    
     font-size: 20px; 
-     color: transparent;
+    display: none;
      width: 40%;
+     align-self: flex-end;
+     background-color: rgba(0,0,0,0.4); 
+     color: #fff;
+   
+   
     
      
   }
-  .title:hover {
-      display:block;
-    background-color: rgba(0,0,0,0.4); 
-    color: #fff
+  .view{
+      top:0;
+     display: flex;
+   
+      height: 250px;
+      position: absolute;
+      background-color: transparent;
+      margin-left: 16px;
+      margin-right: 16px;
+     
+  }  
+  .view:hover >.title{
+      display: block;
+      
+     
+  
 }
   
   

@@ -240,7 +240,7 @@ if (!isset($_SESSION['LoginOK'])) {
                     </div>
                     <hr>
 
-                    <div class="row bg-white mt-5 mb-5 ">
+                    <div class="row  mt-5 mb-5 ">
                         <div class="col-md-12">
                             <h3 class="header-fl ms-0">
                                 People to follow
@@ -248,11 +248,11 @@ if (!isset($_SESSION['LoginOK'])) {
 
                         </div>
                     </div>
-                    <div class="row bg-white timkiem1 mt-5 mb-5 ">
+                    <div class="row bg-white timkiem1 mt-5 mb-5 pt-3 ">
                         <?php include 'dbConfig.php';
                         $id = $_SESSION['id'];
                         $email = $_SESSION['LoginOK'];
-                        $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE isCover=1 and not EXISTS(SELECT following_id FROM follow WHERE users_id='$id' AND users.users_id=follow.following_id order by RAND() ) order by RAND() limit 6;";
+                        $query = "SELECT * FROM users INNER JOIN image_add on users.email= image_add.user_email WHERE users_id != $id and isCover=1 and not EXISTS(SELECT following_id FROM follow WHERE users_id='$id' AND users.users_id=follow.following_id order by RAND() ) order by RAND() limit 4;";
                         $result = mysqli_query($db, $query);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -261,7 +261,7 @@ if (!isset($_SESSION['LoginOK'])) {
                                     continue;
                                 }
                         ?>
-                               
+                                
                                  <div class="col-md-6 user">
                                     <img src="../assets/img/userImg/<?php echo $row['imageAdd_link']; ?>" alt="" class=" img-fluid img-us">
                                     <div class="body">
@@ -290,7 +290,6 @@ if (!isset($_SESSION['LoginOK'])) {
                         ?>
                     </div>
 
-                    <hr>
                 </div>
 
 
